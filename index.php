@@ -91,8 +91,6 @@
 				</div>				
 			</div>
 		</div>
-				<a target="0" href="login.php">Masuk</a>
-				<a target='0' href="register.php">Daftar</a>
 		<div id="fh5co-menus" data-section="menu">
 			<div class="container">
 					<div class="row text-center fh5co-heading row-padded">
