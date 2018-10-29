@@ -76,22 +76,20 @@
 				<div class="container-fluid">
 					<div class="fh5co-menu-1">
 						<a href="#" data-nav-section="home">Beranda</a>
-						<a href="login.php" data-nav-section="login">Masuk</a>
-						<a href="register.php" data-nav-section="register">Daftar</a>
+						<a href="#" data-nav-section="menu">Menu</a>
 					</div>
 					<div class="fh5co-logo">
 						<a href="index.html">NGKKS</a>
 					</div>
 					<div class="fh5co-menu-2">
-						<a href="#" data-nav-section="menu">Menu</a>
 						<a href="#" data-nav-section="events">Outlet</a>
 						<a href="#" data-nav-section="reservation">Order</a>
 					</div>
-				</div>
-				
+				</div>				
 			</div>
 		</div>
-
+				<a target="0" href="login.php">Masuk</a>
+				<a target='0' href="register.php">Daftar</a>
 		<div id="fh5co-menus" data-section="menu">
 			<div class="container">
 					<div class="row text-center fh5co-heading row-padded">
@@ -573,6 +571,13 @@
 							<li><i class="icon-instagram"></i>nasigorengkambingkebonsirih_ </li>
 						</ul>
 					</div>
+					<?
+					session_start();
+					if (!isset($_SESSION['username'])){
+					header('Location:./login.php');
+					}
+					echo'anda sukses login';
+					?>
 					<div class="col-md-6 to-animate-2">
 						<h3>Order Form</h3>
 						<div class="form-group ">
