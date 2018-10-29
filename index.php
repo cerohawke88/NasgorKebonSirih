@@ -86,7 +86,7 @@
 					<div class="fh5co-menu-2">
 						<a href="#" data-nav-section="events">Outlet</a>
 						<a href="#" data-nav-section="reservation">Order</a>
-						<a href="login.php" >Masuk</a>
+						<a href="login.php" onclick="window.location.href='login.php'">Masuk</a>
 					</div>
 				</div>				
 			</div>
