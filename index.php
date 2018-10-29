@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -57,7 +58,8 @@
 				<div class="fh5co-text">
 					<div class="container">
 						<div class="row">
-							<h1 class="to-animate">Nasi Goreng Kambing Kebon Sirih</h1>
+
+									<h1 class="to-animate">Nasi Goreng Kambing Kebon Sirih</h1>
 						</div>
 					</div>
 				</div>
@@ -502,7 +504,7 @@
 							<span class="fh5co-event-meta">Telp: 0811864011</span>
 							<p>Jl. Kebon Sirih Raya. <br>
 								Buka Tiap Hari dari jam 11.00 - 02.00 </p>
-							<p><a href="#" class="btn btn-primary btn-outline">Read More</a></p>
+							<p><a href="map.php" class="btn btn-primary btn-outline">See Map</a></p>
 						</div>
 					</div>
 					<div class="col-md-4">
@@ -511,7 +513,7 @@
 							<span class="fh5co-event-meta">Telp: (021)7666302 </span>
 							<p>Jl. Karang Tengah Raya no.1C. <br> 
 								Buka Tiap Hari dari jam 11.00 - 23.00 </p>
-							<p><a href="#" class="btn btn-primary btn-outline">Read More</a></p>
+							<p><a href="#" class="btn btn-primary btn-outline">See Map</a></p>
 						</div>
 					</div>
 					<div class="col-md-4">
@@ -520,7 +522,7 @@
 							<span class="fh5co-event-meta">Telp: 085945040267</span>
 							<p>Jl.Dapur Raya PG Lt LG#W1. <br>
 								Buka Tiap Hari dari jam 10.00 - 21.00 </p>
-							<p><a href="#" class="btn btn-primary btn-outline">Read More</a></p>
+							<p><a href="#" class="btn btn-primary btn-outline">See Map</a></p>
 						</div>
 					</div>
 					<div class="col-md-4">
@@ -529,7 +531,7 @@
 							<span class="fh5co-event-meta">Telp: 085727555723 </span>
 							<p> Food Exchange, Lt 1 BEMall. <br> 
 								Buka Tiap Hari dari jam 10.00 - 22.00 </p>
-							<p><a href="#" class="btn btn-primary btn-outline">Read More</a></p>
+							<p><a href="#" class="btn btn-primary btn-outline">See Map</a></p>
 						</div>
 					</div>
 					<div class="col-md-4">
@@ -538,7 +540,7 @@
 							<span class="fh5co-event-meta">Telp: 085776567351 </span>
 							<p>Jl. Otista Raya,Ciputat. <br> 
 								Buka Tiap Hari dari jam 04.00 - 23.00 </p>
-							<p><a href="#" class="btn btn-primary btn-outline">Read More</a></p>
+							<p><a href="#" class="btn btn-primary btn-outline">See Map</a></p>
 						</div>
 					</div>
 					<div class="col-md-4">
@@ -547,7 +549,7 @@
 							<span class="fh5co-event-meta">Telp: (021)7415881 </span>
 							<p>Jl. Pajajaran No.45,Pamulang. <br> 
 								Buka Tiap Hari dari jam 11.00 - 23.00 </p>
-							<p><a href="#" class="btn btn-primary btn-outline">Read More</a></p>
+							<p><a href="#" class="btn btn-primary btn-outline">See Map</a></p>
 						</div>
 					</div>
 				</div>
