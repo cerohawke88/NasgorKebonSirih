@@ -1,35 +1,40 @@
+<?php include('config.php');?>
 <!DOCTYPE html>
 <html>
   <head>
     <style>
-       /* Set the size of the div element that contains the map */
-      #map {
-        height: 400px;  /* The height is 400 pixels */
-        width: 100%;  /* The width is the width of the web page */
+       #map {
+        height: 400px;
+        width: 100%;
        }
     </style>
   </head>
   <body>
-    <h3>Tanah Abang</h3>
-    <!--The div element for the map -->
     <div id="map"></div>
     <script>
-// Initialize and add the map
-function initMap() {
-  // The location of Uluru
-  var uluru = {lat: -6.183317, lng: 106.825728};
-  // The map, centered at Uluru
-  var map = new google.maps.Map(
-      document.getElementById('map'), {zoom: 11, center: uluru});
-  // The marker, positioned at Uluru
-  var marker = new google.maps.Marker({position: uluru, map: map});
-}
+      function initMap() {
+        var centermap = {lat: -6.21462, lng: 106.84513};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: centermap
+          <?php  
+           mysql_connect('localhost','root','');  
+           mysql_select_db('db_kebonsirih');  
+           $query="select * from alamat";  
+           $datas = mysql_query($query);  
+           while ($data=mysql_fetch_array($datas)) {  
+             ?>  
+             ["<?php echo $data['alamat'];?>", <?php echo $data['lat']; ?> , <?php echo $data['lng']; ?> ,1, "<h4><?php echo $data['alamat'];?></h4>"],  
+             <?php  
+           }  
+         ?> 
+        });
+        var marker = new google.maps.Marker({
+          position: centermap,
+          map: map
+        });
+      }
     </script>
-    <!--Load the API from the specified URL
-    * The async attribute allows the browser to render the page while the API loads
-    * The key parameter will contain your own API key (which is not needed for this tutorial)
-    * The callback parameter executes the initMap() function
-    -->
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-WbkXqtFaZGolPa0Y12CUiMdNRzHwgyk&callback=initMap">
     </script>
