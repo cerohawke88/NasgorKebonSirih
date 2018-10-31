@@ -91,6 +91,7 @@
 				</div>				
 			</div>
 		</div>
+
 		<div id="fh5co-menus" data-section="menu">
 			<div class="container">
 					<div class="row text-center fh5co-heading row-padded">
