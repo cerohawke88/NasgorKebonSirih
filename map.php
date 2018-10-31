@@ -1,62 +1,42 @@
-<?php
-  include "config.php";
-?>
+<?php include('config.php');?>
 <!DOCTYPE html>
 <html>
   <head>
     <style>
-      #map-canvas {
-        width: 500px;
-        height: 500px;
-      }
+       #map {
+        height: 400px;
+        width: 100%;
+       }
     </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var centermap = {lat: -6.21462, lng: 106.84513};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: centermap
+          <?php  
+           mysql_connect('localhost','root','');  
+           mysql_select_db('db_kebonsirih');  
+           $query="select * from alamat";  
+           $datas = mysql_query($query);  
+           while ($data=mysql_fetch_array($datas)) {  
+             ?>  
+             ["<?php echo $data['alamat'];?>", <?php echo $data['lat']; ?> , <?php echo $data['lng']; ?> ,1, "<h4><?php echo $data['alamat'];?></h4>"],  
+             <?php  
+           }  
+         ?> 
+        });
+        var marker = new google.maps.Marker({
+          position: centermap,
+          map: map
+        });
+      }
+    </script>
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-WbkXqtFaZGolPa0Y12CUiMdNRzHwgyk&callback=initMap">
     </script>
-    <script>
-    var marker;
-      function initialize() {
-        var mapCanvas = document.getElementById('map-canvas');
-        var mapOptions = {
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        }     
-        var map = new google.maps.Map(mapCanvas, mapOptions);
-        var infoWindow = new google.maps.InfoWindow;      
-        var bounds = new google.maps.LatLngBounds();
- 
- 
-        function bindInfoWindow(marker, map, infoWindow, html) {
-          google.maps.event.addListener(marker, 'click', function() {
-            infoWindow.setContent(html);
-            infoWindow.open(map, marker);
-          });
-        }
- 
-          function addMarker(lat, lng, info) {
-            var pt = new google.maps.LatLng(lat, lng);
-            bounds.extend(pt);
-            var marker = new google.maps.Marker({
-                map: map,
-                position: pt
-            });       
-            map.fitBounds(bounds);
-            bindInfoWindow(marker, map, infoWindow, info);
-          }
- 
-          <?php
-            $query = mysql_query("select * from tbl_lokasi");
-          while ($data = mysql_fetch_array($query)) {
-            $lat = $data['lat'];
-            $lon = $data['lng'];
-            $nama = $data['nama_lokasi'];
-            echo ("addMarker($lat, $lon, '<b>$nama</b>');\n");                        
-          }
-          ?>
-        }
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
-  </head>
-  <body>
-    <div id="map-canvas"></div>
   </body>
 </html>
