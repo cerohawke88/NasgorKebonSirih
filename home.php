@@ -119,7 +119,17 @@ include('cek-login.php');
 										</div>
 										<div class="fh5co-food-pricing">
 											Rp.41.000
+											
 										</div>
+										<form class="form-inline" method="post" style="border: none; margin-right: -60px;">
+												<div class="form-group"> 
+													<input type="number" name="quantity" min="1">
+												</div>
+												
+												<div class="form-group"> 
+													<button type="submit" class="btnPesan">Pesan</button>
+												</div>		
+										</form>	
 									</li>
 									<li>
 										<div class="fh5co-food-desc">
@@ -134,6 +144,15 @@ include('cek-login.php');
 										<div class="fh5co-food-pricing">
 											Rp. 41.000
 										</div>
+										<form class="form-inline" method="post" style="border: none; margin-right: -60px;">
+												<div class="form-group"> 
+													<input type="number" name="quantity" min="1">
+												</div>
+												
+												<div class="form-group"> 
+													<button type="submit" class="btnPesan">Pesan</button>
+												</div>		
+										</form>	
 									</li>
 									<li>
 										<div class="fh5co-food-desc">
@@ -148,6 +167,15 @@ include('cek-login.php');
 										<div class="fh5co-food-pricing">
 											Rp. 45.000
 										</div>
+										<form class="form-inline" method="post" style="border: none; margin-right: -60px;">
+												<div class="form-group"> 
+													<input type="number" name="quantity" min="1">
+												</div>
+												
+												<div class="form-group"> 
+													<button type="submit" class="btnPesan">Pesan</button>
+												</div>		
+										</form>	
 									</li>
 									<li>
 										<div class="fh5co-food-desc">
@@ -162,6 +190,15 @@ include('cek-login.php');
 										<div class="fh5co-food-pricing">
 											Rp. 50.000
 										</div>
+										<form class="form-inline" method="post" style="border: none; margin-right: -60px;">
+												<div class="form-group"> 
+													<input type="number" name="quantity" min="1">
+												</div>
+												
+												<div class="form-group"> 
+													<button type="submit" class="btnPesan">Pesan</button>
+												</div>		
+										</form>	
 									</li>
 									<li>
 										<div class="fh5co-food-desc">
@@ -176,6 +213,15 @@ include('cek-login.php');
 										<div class="fh5co-food-pricing">
 											Rp. 38.000
 										</div>
+										<form class="form-inline" method="post" style="border: none; margin-right: -60px;">
+												<div class="form-group"> 
+													<input type="number" name="quantity" min="1">
+												</div>
+												
+												<div class="form-group"> 
+													<button type="submit" class="btnPesan">Pesan</button>
+												</div>		
+										</form>	
 									</li>
 									<li>
 										<div class="fh5co-food-desc">
@@ -190,6 +236,15 @@ include('cek-login.php');
 										<div class="fh5co-food-pricing">
 											Rp. 27.000
 										</div>
+										<form class="form-inline" method="post" style="border: none; margin-right: -60px;">
+												<div class="form-group"> 
+													<input type="number" name="quantity" min="1">
+												</div>
+												
+												<div class="form-group"> 
+													<button type="submit" class="btnPesan">Pesan</button>
+												</div>		
+										</form>	
 									</li>
 								</ul>
 							</div>
@@ -211,6 +266,15 @@ include('cek-login.php');
 										<div class="fh5co-food-pricing">
 											Rp. 60.000
 										</div>
+										<form class="form-inline" method="post" style="border: none; margin-right: -60px;">
+												<div class="form-group"> 
+													<input type="number" name="quantity" min="1">
+												</div>
+												
+												<div class="form-group"> 
+													<button type="submit" class="btnPesan">Pesan</button>
+												</div>		
+										</form>	
 									</li>
 									<li>
 										<div class="fh5co-food-desc">
@@ -225,6 +289,15 @@ include('cek-login.php');
 										<div class="fh5co-food-pricing">
 											Rp. 60.000
 										</div>
+										<form class="form-inline" method="post" style="border: none; margin-right: -60px;">
+												<div class="form-group"> 
+													<input type="number" name="quantity" min="1">
+												</div>
+												
+												<div class="form-group"> 
+													<button type="submit" class="btnPesan">Pesan</button>
+												</div>		
+										</form>	
 									</li>
 									<li>
 										<div class="fh5co-food-desc">
@@ -239,6 +312,15 @@ include('cek-login.php');
 										<div class="fh5co-food-pricing">
 											Rp. 35.000
 										</div>
+										<form class="form-inline" method="post" style="border: none; margin-right: -60px;">
+												<div class="form-group"> 
+													<input type="number" name="quantity" min="1">
+												</div>
+												
+												<div class="form-group"> 
+													<button type="submit" class="btnPesan">Pesan</button>
+												</div>		
+										</form>	
 									</li>
 									<li>
 										<div class="fh5co-food-desc">
@@ -253,6 +335,15 @@ include('cek-login.php');
 										<div class="fh5co-food-pricing">
 											Rp. 40.000
 										</div>
+										<form class="form-inline" method="post" style="border: none; margin-right: -60px;">
+												<div class="form-group"> 
+													<input type="number" name="quantity" min="1">
+												</div>
+												
+												<div class="form-group"> 
+													<button type="submit" class="btnPesan">Pesan</button>
+												</div>		
+										</form>	
 									</li>
 									<li>
 										<div class="fh5co-food-desc">
@@ -267,6 +358,15 @@ include('cek-login.php');
 										<div class="fh5co-food-pricing">
 											Rp. 40.000
 										</div>
+										<form class="form-inline" method="post" style="border: none; margin-right: -60px;">
+												<div class="form-group"> 
+													<input type="number" name="quantity" min="1">
+												</div>
+												
+												<div class="form-group"> 
+													<button type="submit" class="btnPesan">Pesan</button>
+												</div>		
+										</form>	
 									</li>
 									<li>
 										<div class="fh5co-food-desc">
@@ -281,6 +381,15 @@ include('cek-login.php');
 										<div class="fh5co-food-pricing">
 											Rp. 6.000
 										</div>
+										<form class="form-inline" method="post" style="border: none; margin-right: -60px;">
+												<div class="form-group"> 
+													<input type="number" name="quantity" min="1">
+												</div>
+												
+												<div class="form-group"> 
+													<button type="submit" class="btnPesan">Pesan</button>
+												</div>		
+										</form>	
 									</li>
 									<li>
 										<div class="fh5co-food-desc">
@@ -295,6 +404,15 @@ include('cek-login.php');
 										<div class="fh5co-food-pricing">
 											Rp. 7.000
 										</div>
+										<form class="form-inline" method="post" style="border: none; margin-right: -60px;">
+												<div class="form-group"> 
+													<input type="number" name="quantity" min="1">
+												</div>
+												
+												<div class="form-group"> 
+													<button type="submit" class="btnPesan">Pesan</button>
+												</div>		
+										</form>	
 									</li>
 								</ul>
 							</div>
@@ -319,6 +437,15 @@ include('cek-login.php');
 											<div class="fh5co-food-pricing">
 												Rp. 15.000
 											</div>
+											<form class="form-inline" method="post" style="border: none; margin-right: -60px;">
+												<div class="form-group"> 
+													<input type="number" name="quantity" min="1">
+												</div>
+												
+												<div class="form-group"> 
+													<button type="submit" class="btnPesan">Pesan</button>
+												</div>		
+											</form>	
 										</li>
 										<li>
 											<div class="fh5co-food-desc">
@@ -333,6 +460,15 @@ include('cek-login.php');
 											<div class="fh5co-food-pricing">
 												Rp. 18.000
 											</div>
+											<form class="form-inline" method="post" style="border: none; margin-right: -60px;">
+												<div class="form-group"> 
+													<input type="number" name="quantity" min="1">
+												</div>
+												
+												<div class="form-group"> 
+													<button type="submit" class="btnPesan">Pesan</button>
+												</div>		
+											</form>	
 										</li>
 										<li>
 											<div class="fh5co-food-desc">
@@ -347,6 +483,15 @@ include('cek-login.php');
 											<div class="fh5co-food-pricing">
 												Rp. 20.000
 											</div>
+											<form class="form-inline" method="post" style="border: none; margin-right: -60px;">
+												<div class="form-group"> 
+													<input type="number" name="quantity" min="1">
+												</div>
+												
+												<div class="form-group"> 
+													<button type="submit" class="btnPesan">Pesan</button>
+												</div>		
+											</form>	
 										</li>
 										<li>
 											<div class="fh5co-food-desc">
@@ -361,6 +506,15 @@ include('cek-login.php');
 											<div class="fh5co-food-pricing">
 												Rp. 10.000
 											</div>
+											<form class="form-inline" method="post" style="border: none; margin-right: -60px;">
+												<div class="form-group"> 
+													<input type="number" name="quantity" min="1">
+												</div>
+												
+												<div class="form-group"> 
+													<button type="submit" class="btnPesan">Pesan</button>
+												</div>		
+											</form>	
 										</li>
 										<li>
 											<div class="fh5co-food-desc">
@@ -375,6 +529,15 @@ include('cek-login.php');
 											<div class="fh5co-food-pricing">
 												Rp. 8.000
 											</div>
+											<form class="form-inline" method="post" style="border: none; margin-right: -60px;">
+												<div class="form-group"> 
+													<input type="number" name="quantity" min="1">
+												</div>
+												
+												<div class="form-group"> 
+													<button type="submit" class="btnPesan">Pesan</button>
+												</div>		
+											</form>	
 										</li>
 										<li>
 											<div class="fh5co-food-desc">
@@ -382,13 +545,22 @@ include('cek-login.php');
 													<img src="images/res_img_5.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
 												</figure>
 												<div>
-													<h3>Es Teh Manis/Tawar</h3>
+													<h3>Es Teh Manis/Panas</h3>
 													<p>Manis segerr di mulut.</p>
 												</div>
 											</div>
 											<div class="fh5co-food-pricing">
 												Rp. 5.000
 											</div>
+											<form class="form-inline" method="post" style="border: none; margin-right: -60px;">
+												<div class="form-group"> 
+													<input type="number" name="quantity" min="1">
+												</div>
+												
+												<div class="form-group"> 
+													<button type="submit" class="btnPesan">Pesan</button>
+												</div>		
+											</form>	
 										</li>
 									</ul>
 								</div>
@@ -411,6 +583,15 @@ include('cek-login.php');
 												<div class="fh5co-food-pricing">
 													Rp.4.000
 												</div>
+												<form class="form-inline" method="post" style="border: none; margin-right: -60px;">
+													<div class="form-group"> 
+														<input type="number" name="quantity" min="1">
+													</div>
+													
+													<div class="form-group"> 
+														<button type="submit" class="btnPesan">Pesan</button>
+													</div>		
+												</form>	
 											</li>
 											<li>
 												<div class="fh5co-food-desc">
@@ -425,6 +606,15 @@ include('cek-login.php');
 												<div class="fh5co-food-pricing">
 													Rp. 2.000
 												</div>
+												<form class="form-inline" method="post" style="border: none; margin-right: -60px;">
+													<div class="form-group"> 
+														<input type="number" name="quantity" min="1">
+													</div>
+													
+													<div class="form-group"> 
+														<button type="submit" class="btnPesan">Pesan</button>
+													</div>		
+												</form>	
 											</li>
 											<li>
 												<div class="fh5co-food-desc">
@@ -439,6 +629,15 @@ include('cek-login.php');
 												<div class="fh5co-food-pricing">
 													Rp. 15.000
 												</div>
+												<form class="form-inline" method="post" style="border: none; margin-right: -60px;">
+													<div class="form-group"> 
+														<input type="number" name="quantity" min="1">
+													</div>
+													
+													<div class="form-group"> 
+														<button type="submit" class="btnPesan">Pesan</button>
+													</div>		
+												</form>	
 											</li>
 											<li>
 												<div class="fh5co-food-desc">
@@ -453,6 +652,15 @@ include('cek-login.php');
 												<div class="fh5co-food-pricing">
 													Rp.15.000
 												</div>
+												<form class="form-inline" method="post" style="border: none; margin-right: -60px;">
+													<div class="form-group"> 
+														<input type="number" name="quantity" min="1">
+													</div>
+													
+													<div class="form-group"> 
+														<button type="submit" class="btnPesan">Pesan</button>
+													</div>		
+												</form>	
 											</li>
 											<li>
 												<div class="fh5co-food-desc">
@@ -467,6 +675,15 @@ include('cek-login.php');
 												<div class="fh5co-food-pricing">
 													Rp.5.000
 												</div>
+												<form class="form-inline" method="post" style="border: none; margin-right: -60px;">
+													<div class="form-group"> 
+														<input type="number" name="quantity" min="1">
+													</div>
+													
+													<div class="form-group"> 
+														<button type="submit" class="btnPesan">Pesan</button>
+													</div>		
+												</form>	
 											</li>
 											<li>
 												<div class="fh5co-food-desc">
@@ -481,6 +698,15 @@ include('cek-login.php');
 												<div class="fh5co-food-pricing">
 													Rp.5.000
 												</div>
+												<form class="form-inline" method="post" style="border: none; margin-right: -60px;">
+													<div class="form-group"> 
+														<input type="number" name="quantity" min="1">
+													</div>
+													
+													<div class="form-group"> 
+														<button type="submit" class="btnPesan">Pesan</button>
+													</div>		
+												</form>	
 											</li>
 										</ul>
 									</div>

@@ -381,7 +381,7 @@ include('config.php');
 													<img src="images/res_img_5.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
 												</figure>
 												<div>
-													<h3>Es Teh Manis/Tawar</h3>
+													<h3>Es Teh Manis/Panas</h3>
 													<p>Manis segerr di mulut.</p>
 												</div>
 											</div>
