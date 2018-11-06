@@ -503,7 +503,7 @@ include('config.php');
 							<span class="fh5co-event-meta">Telp: 0811864011</span>
 							<p>Jl. Kebon Sirih Raya. <br>
 								Buka Tiap Hari dari jam 11.00 - 02.00 </p>
-							<p><a href="map.php" class="btn btn-primary btn-outline">See Map</a></p>
+							<p><a href="map.php?id=1" class="btn btn-primary btn-outline">See Map</a></p>
 						</div>
 					</div>
 					<div class="col-md-4">

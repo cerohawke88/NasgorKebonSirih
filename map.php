@@ -1,42 +1,38 @@
-<?php include('config.php');?>
-<!DOCTYPE html>
-<html>
-  <head>
-    <style>
-       #map {
-        height: 400px;
-        width: 100%;
-       }
-    </style>
-  </head>
-  <body>
-    <div id="map"></div>
-    <script>
-      function initMap() {
-        var centermap = {lat: -6.21462, lng: 106.84513};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 10,
-          center: centermap
-          <?php  
-           mysql_connect('localhost','root','');  
-           mysql_select_db('db_kebonsirih');  
-           $query="select * from alamat";  
-           $datas = mysql_query($query);  
-           while ($data=mysql_fetch_array($datas)) {  
-             ?>  
-             ["<?php echo $data['alamat'];?>", <?php echo $data['lat']; ?> , <?php echo $data['lng']; ?> ,1, "<h4><?php echo $data['alamat'];?></h4>"],  
-             <?php  
-           }  
-         ?> 
-        });
-        var marker = new google.maps.Marker({
-          position: centermap,
-          map: map
-        });
-      }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD-WbkXqtFaZGolPa0Y12CUiMdNRzHwgyk&callback=initMap">
-    </script>
-  </body>
-</html>
+<?php 
+if ( ! defined('BASEPATH')) 
+  exit('No direct script access allowed');
+
+class Map {
+    
+     function __construct()
+  {
+    parent::__construct();
+    $this->load->library('Googlemaps');
+    // Load our model
+    $this->load->model('map_model');
+  }
+  public function index()
+    {
+    // Load the library
+    // Initialize the map, passing through any parameters
+    $config['center'] = '-6.21462, 106.84513';
+    $config['zoom'] = '18';
+    $config['places'] = TRUE;
+    $config['placesRadius'] = 200;
+
+    $this->googlemaps->initialize($config);
+    // Get the co-ordinates from the database using our model
+    $alamat = $this->map_model->get_coordinates();
+           
+    // Loop through the coordinates we obtained above and add them to the map
+    foreach ($alamat as $coordinate) {
+    $marker = array();
+    $marker['id'] = $coordinate->id;
+    $marker['position'] = $coordinate->lat.','.$coordinate->lng;
+    $this->googlemaps->add_marker($marker);
+
+    }
+    $data = array();
+    $data['map'] = $this->googlemaps->create_map();
+    $this->load->view('map', $data);
+}
