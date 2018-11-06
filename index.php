@@ -1,11 +1,5 @@
 <?php
-session_start();
 require_once('config.php');
-$db = new Config();
-$db->cekLogin();
-$makanan = $db->runQuery("SELECT * FROM menu WHERE jenis = 'Makanan'");
-$minuman = $db->runQuery("SELECT * FROM menu WHERE jenis = 'Minuman'");
-$snack = $db->runQuery("SELECT * FROM menu WHERE jenis = 'Snack'");
 ?>
 <?php include('header.php'); ?>
 <body>
