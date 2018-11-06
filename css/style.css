@@ -905,6 +905,21 @@ p {
   float: left;
   width: 100%;
 }
+
+input[type=number]{
+    width: 70px;
+    height: 25px;
+    
+}
+
+.btnPesan {
+  height: 2em;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  color: #fff;
+  background-color: #fb6e14;
+}
+
 #fh5co-menus .fh5co-food-menu ul li .fh5co-food-desc {
   clear: both;
   float: left;

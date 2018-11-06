@@ -591,8 +591,6 @@
 		reservationAnimate();
 		footerAnimate();
 
-		
-
 	});
 
 
