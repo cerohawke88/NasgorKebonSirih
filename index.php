@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once('config.php');
 $db = new Config();
 $makanan = $db->runQuery("SELECT * FROM menu WHERE jenis = 'Makanan'");
