@@ -4,6 +4,7 @@ $db = new Config();
 $makanan = $db->runQuery("SELECT * FROM menu WHERE jenis = 'Makanan'");
 $minuman = $db->runQuery("SELECT * FROM menu WHERE jenis = 'Minuman'");
 $snack = $db->runQuery("SELECT * FROM menu WHERE jenis = 'Snack'");
+$alamat = $db->runQuery("SELECT * FROM alamat");
 ?>
 <?php include('header.php'); ?>
 <body>
@@ -509,9 +510,6 @@ $snack = $db->runQuery("SELECT * FROM menu WHERE jenis = 'Snack'");
 
 
 
-				
-
-
 		<div id="fh5co-events" data-section="events" style="background-image: url(images/slide_2.jpg);" data-stellar-background-ratio="0.5">
 			<div class="fh5co-overlay"></div>
 			<div class="container">
@@ -522,60 +520,21 @@ $snack = $db->runQuery("SELECT * FROM menu WHERE jenis = 'Snack'");
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-4">
-						<div class="fh5co-event to-animate-2">
-							<h3>Tanah Abang</h3>
-							<span class="fh5co-event-meta">Telp: 0811864011</span>
-							<p>Jl. Kebon Sirih Raya. <br>
-								Buka Tiap Hari dari jam 11.00 - 02.00 </p>
-							<p><a href="map.php" class="btn btn-primary btn-outline">See Map</a></p>
+					<?php 
+						foreach($alamat as $row) {
+					?>
+						<div class="col-md-4">
+							<div class="fh5co-event to-animate-2">
+								<h3><?php echo $row['cabang'] ?></h3>
+								<span class="fh5co-event-meta"><?php echo $row['telp'] ?></span>
+								<p><?php echo $row['alamat'] ?><br>
+									<?php echo $row['keterangan'] ?> </p>
+								<p><a href="map.php?lat=<?php echo $row['lat']?>&lng=<?php echo $row['lng']?>" class="btn btn-primary btn-outline">See Map</a></p>
+							</div>
 						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="fh5co-event to-animate-2">
-							<h3>Lebak Bulus</h3>
-							<span class="fh5co-event-meta">Telp: (021)7666302 </span>
-							<p>Jl. Karang Tengah Raya no.1C. <br> 
-								Buka Tiap Hari dari jam 11.00 - 23.00 </p>
-							<p><a href="#" class="btn btn-primary btn-outline">See Map</a></p>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="fh5co-event to-animate-2">
-							<h3>Pasaraya Grande</h3>
-							<span class="fh5co-event-meta">Telp: 085945040267</span>
-							<p>Jl.Dapur Raya PG Lt LG#W1. <br>
-								Buka Tiap Hari dari jam 10.00 - 21.00 </p>
-							<p><a href="#" class="btn btn-primary btn-outline">See Map</a></p>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="fh5co-event to-animate-2">
-							<h3>Bintaro Exchange Mall</h3>
-							<span class="fh5co-event-meta">Telp: 085727555723 </span>
-							<p> Food Exchange, Lt 1 BEMall. <br> 
-								Buka Tiap Hari dari jam 10.00 - 22.00 </p>
-							<p><a href="#" class="btn btn-primary btn-outline">See Map</a></p>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="fh5co-event to-animate-2">
-							<h3>Taman Kuliner</h3>
-							<span class="fh5co-event-meta">Telp: 085776567351 </span>
-							<p>Jl. Otista Raya,Ciputat. <br> 
-								Buka Tiap Hari dari jam 04.00 - 23.00 </p>
-							<p><a href="#" class="btn btn-primary btn-outline">See Map</a></p>
-						</div>
-					</div>
-					<div class="col-md-4">
-						<div class="fh5co-event to-animate-2">
-							<h3>Tangerang Selatan</h3>
-							<span class="fh5co-event-meta">Telp: (021)7415881 </span>
-							<p>Jl. Pajajaran No.45,Pamulang. <br> 
-								Buka Tiap Hari dari jam 11.00 - 23.00 </p>
-							<p><a href="#" class="btn btn-primary btn-outline">See Map</a></p>
-						</div>
-					</div>
+					<?php		
+						}
+					?>
 				</div>
 			</div>
 		</div>

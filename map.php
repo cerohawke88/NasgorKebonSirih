@@ -1,36 +1,39 @@
-<?php 
-if ( ! defined('BASEPATH')) 
-  exit('No direct script access allowed');
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #map{
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h3>Map</h3>
 
-class Map {
-    
-    $this->load('libraries/Googlemaps');
-    // Load our model
-    $this->load('map_model');
+    <div id="map"></div>
 
-  public function index()
-    {
-    // Load the library
-    // Initialize the map, passing through any parameters
-    $config['center'] = '-6.21462, 106.84513';
-    $config['zoom'] = '18';
-    $config['places'] = TRUE;
-    $config['placesRadius'] = 200;
+    <?php
+        $lat = $_GET['lat'];
+        $lng = $_GET['lng'];
+    ?>
 
-    $this->googlemaps->initialize($config);
-    // Get the co-ordinates from the database using our model
-    $alamat = $this->map_model->get_coordinates();
-           
-    // Loop through the coordinates we obtained above and add them to the map
-    foreach ($alamat as $coordinate) {
-    $marker = array();
-    $marker['position'] = $coordinate->lat.','.$coordinate->lng;
-    $this->googlemaps->add_marker($marker);
+    <script>
+        var latitude = "<?php echo $lat; ?>";
+        var longitude = "<?php echo $lng; ?>";
 
-    }
-    $data = array();
-    $data['map'] = $this->googlemaps->create_map();
-    $this->load($data);   
-}
-}
-?>
+        function initMap(){
+
+            var uluru = {lat: parseFloat(latitude), lng: parseFloat(longitude)};
+
+            var map = new google.maps.Map(
+                document.getElementById('map'), {zoom: 15, center: uluru});
+
+            var marker = new google.maps.Marker({position: uluru, map: map});
+        }
+    </script>
+
+    <script async defer src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDjcv4dEOOtHw0srW1XQrUAXAtQJCY2EME&callback=initMap"></script>
+
+</body>
+</html>
