@@ -2,20 +2,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Register</title>
+  <title>Daftar - NGKKS</title>
+  <div class="header">
+  <h2>Register</h2>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  </div>
 </head>
 <body class="login-body">
-  <div class="header">
-  	<h2>Register</h2>
-  <title>Daftar - NGKKS</title>
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-</head>
-<body background="images/menu1.jpg">
-  <div class="header" style="background-color: #fb6e14;">
-  	<h2 style="color: white">Buat akun</h2>
-  </div>
-	
   <form method="post" action="register.php">
   	<?php include('errors.php'); ?>
   	<div class="input-group">
@@ -35,7 +28,7 @@
   	  <input type="password" name="password_2">
   	</div>
   	<div class="input-group">
-  	  <button type="submit" class="btn" name="reg_user" style="background-color: #fb6e14;">Register</button>
+  	  <button type="submit" class="btn" name="reg_user">Register</button>
   	</div>
   	<p>
   		Sudah buat akun? <a href="login.php">Masuk</a>
