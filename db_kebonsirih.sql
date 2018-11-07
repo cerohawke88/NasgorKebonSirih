@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.8.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 04, 2018 at 04:18 PM
--- Server version: 10.1.26-MariaDB
--- PHP Version: 7.1.8
+-- Generation Time: Nov 07, 2018 at 08:07 AM
+-- Server version: 10.1.33-MariaDB
+-- PHP Version: 7.2.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,6 +21,34 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_kebonsirih`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `alamat`
+--
+
+CREATE TABLE `alamat` (
+  `id` int(11) NOT NULL,
+  `cabang` varchar(200) NOT NULL,
+  `telp` varchar(200) NOT NULL,
+  `alamat` varchar(200) NOT NULL,
+  `keterangan` varchar(200) NOT NULL,
+  `lat` varchar(100) NOT NULL,
+  `lng` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `alamat`
+--
+
+INSERT INTO `alamat` (`id`, `cabang`, `telp`, `alamat`, `keterangan`, `lat`, `lng`) VALUES
+(1, 'Tanah Abang', '0811864011', 'Jl. Kebon Sirih Raya.', 'Buka Tiap Hari dari jam 11.00 - 02.00', '-6.183317', '106.825728'),
+(2, 'Lebak Bulus', '(021)7666302', 'Jl. Karang Tengah Raya no.1c', 'Buka tiap hari dari jam 11.00-23.00', '-6.266844', '106.800501'),
+(3, 'Pasaraya Grande', '085945040267', 'Jl. Dapur raya PG Lt LG #W1', 'Buka tiap hari dari jam 10.00-21.00', '-6.243947', '106.802905'),
+(4, 'Bintaro Exchange Mall', '085727555723', 'Food Exchange,Lt 1 BEMall', 'Buka tiap hari dari jam 10.00-22.00', '-6.285386', '106.728054'),
+(5, 'Taman Kuliner', '085776567351', 'Jl. Otista Raya,Ciputat', 'Buka tiap hari dari jam 04.00-23.00', '-6.322897', '106.745194'),
+(6, 'Tanggerang Selatan', '(021) 7415881', 'Jl. Pajajaran no.45, Pamulang', 'buka tiap hari dari jam 11.00-23.00', '-6.340167', '106.738612');
 
 -- --------------------------------------------------------
 
@@ -97,11 +125,18 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `saldo`, `created_at`) VALUES
-(1, 'Test', 'test@test.com', 'a8f5f167f44f4964e6c998dee827110c', 30000, '2018-10-29 08:48:32');
+(1, 'Test', 'test@test.com', 'a8f5f167f44f4964e6c998dee827110c', 30000, '2018-10-29 08:48:32'),
+(2, 'dzaky', 'dzaky@gmail.com', 'b02dd1f9ddf82871026edd1786c47ed3', 30000, '2018-11-07 14:04:57');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `alamat`
+--
+ALTER TABLE `alamat`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `menu`
@@ -121,15 +156,23 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `alamat`
+--
+ALTER TABLE `alamat`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
