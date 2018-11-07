@@ -4,13 +4,10 @@ if ( ! defined('BASEPATH'))
 
 class Map {
     
-     function __construct()
-  {
-    parent::__construct();
-    $this->load->library('Googlemaps');
+    $this->load('libraries/Googlemaps');
     // Load our model
-    $this->load->model('map_model');
-  }
+    $this->load('map_model');
+
   public function index()
     {
     // Load the library
@@ -27,12 +24,13 @@ class Map {
     // Loop through the coordinates we obtained above and add them to the map
     foreach ($alamat as $coordinate) {
     $marker = array();
-    $marker['id'] = $coordinate->id;
     $marker['position'] = $coordinate->lat.','.$coordinate->lng;
     $this->googlemaps->add_marker($marker);
 
     }
     $data = array();
     $data['map'] = $this->googlemaps->create_map();
-    $this->load->view('map', $data);
+    $this->load($data);   
 }
+}
+?>

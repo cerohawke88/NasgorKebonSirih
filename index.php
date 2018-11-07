@@ -2,7 +2,6 @@
 session_start();
 require_once('config.php');
 $db = new Config();
-$db->cekLogin();
 $makanan = $db->runQuery("SELECT * FROM menu WHERE jenis = 'Makanan'");
 $minuman = $db->runQuery("SELECT * FROM menu WHERE jenis = 'Minuman'");
 $snack = $db->runQuery("SELECT * FROM menu WHERE jenis = 'Snack'");
@@ -530,7 +529,7 @@ $snack = $db->runQuery("SELECT * FROM menu WHERE jenis = 'Snack'");
 							<span class="fh5co-event-meta">Telp: 0811864011</span>
 							<p>Jl. Kebon Sirih Raya. <br>
 								Buka Tiap Hari dari jam 11.00 - 02.00 </p>
-							<p><a href="map.php?id=1" class="btn btn-primary btn-outline">See Map</a></p>
+							<p><a href="map.php" class="btn btn-primary btn-outline">See Map</a></p>
 						</div>
 					</div>
 					<div class="col-md-4">

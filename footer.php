@@ -10,9 +10,8 @@
 			<div class="row">
 				<div class="col-md-12 text-center">
 					<ul class="fh5co-social">
-						<li class="to-animate-2"><a href="#"><i class="icon-facebook"></i></a></li>
-						<li class="to-animate-2"><a href="#"><i class="icon-twitter"></i></a></li>
-						<li class="to-animate-2"><a href="#"><i class="icon-instagram"></i></a></li>
+						<li class="to-animate-2"><a href="https://www.facebook.com/ngkkebonsirih/" target="_blank"><i class="icon-facebook"></i></a></li>
+						<li class="to-animate-2"><a href="https://www.instagram.com/nasigorengkambingkebonsirih_/?hl=id" target="_blank"><i class="icon-instagram"></i></a></li>
 					</ul>
 				</div>
 			</div>

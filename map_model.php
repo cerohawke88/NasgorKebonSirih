@@ -1,10 +1,9 @@
 <?php 
+if ( ! defined('BASEPATH')) 
+  exit('No direct script access allowed');
+
 class Map_model {    
     
-    function __construct()    {        
-
-        parent::__construct();    
-    }
     function get_coordinates()    {
         
         $return = array();
@@ -21,4 +20,21 @@ class Map_model {
         return $return;
     
     }
+        function get_center()    {
+        
+        $return = array();
+        $this->db->select("id,latitude,longitude");        
+        $this->db->from("tabelpelanggan");        
+        $query = $this->db->get();
+
+        if ($query->num_rows()>0) {            
+            foreach ($query->result() as $row) {                
+                array_push($return, $row);            
+            }        
+
+        }
+        return $return;
+    
+    }
+}
 ?>
