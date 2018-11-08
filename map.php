@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<?php include('header.php'); ?>
 <head>
     <style>
         #map{
@@ -9,8 +10,23 @@
     </style>
 </head>
 <body>
-    <h3>Map</h3>
-
+    <div class="js-sticky">
+            <div class="fh5co-main-nav">
+                <div class="container-fluid">
+                    <div class="fh5co-menu-1">
+                        <a href="home.php" onclick="window.location.href='home.php'">Beranda</a>
+                        <a href="home.php" onclick="window.location.href='home.php'">Menu</a>
+                    </div>
+                    <div class="fh5co-logo">
+                        <a href="#">NGKKS</a>
+                    </div>
+                    <div class="fh5co-menu-2">
+                        <a href="home.php" onclick="window.location.href='home.php'">Outlet</a>
+                        <a href="login.php" onclick="window.location.href='login.php'">Order</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     <div id="map"></div>
 
     <?php
@@ -34,6 +50,6 @@
     </script>
 
     <script async defer src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDjcv4dEOOtHw0srW1XQrUAXAtQJCY2EME&callback=initMap"></script>
-
+<?php include('footer.php'); ?>
 </body>
 </html>
