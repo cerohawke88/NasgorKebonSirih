@@ -5,6 +5,7 @@
   font-weight: normal;
   font-style: normal;
 }
+
 body {
   font-family: "Merriweather", serif;
   font-size: 18px;
@@ -38,7 +39,7 @@ a:hover, a:focus, a:active {
   width: 30%;
   margin: 50px auto 0px;
   color: white;
-  background: tan;
+  background: #fb6e14;
   text-align: center;
   border: 1px solid #B0C4DE;
   border-bottom: none;
@@ -76,7 +77,7 @@ form, .content {
   padding: 10px;
   font-size: 15px;
   color: white;
-  background: tan;
+  background: #fb6e14;
   border: none;
   border-radius: 5px;
 }

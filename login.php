@@ -5,33 +5,40 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-show-password/1.0.3/bootstrap-show-password.min.js"></script>
+
   <head>
     <div class="header">
     <title>Masuk - NGKKS</title>
       <p>
-        <a href="index.php" class="btn btn-info btn-lg" style="background-color: tan">
-          <span class="glyphicon glyphicon-home"></span>
+        <a href="index.php" class="" style="float: left">
+          <span class="glyphicon glyphicon-arrow-left"></span>
         </a>
       </p>
-      <h2>Nasi Goreng Kambing Kebon Sirih</h2>
+      <br><h3>Nasi Goreng Kambing Kebon Sirih</h2>
     </div>
   </head>
   <body class="login-body">
     <form method="post" action="login.php">
       <?php include('errors.php'); ?>
       <div class="input-group">
-        <label>Username</label>
-        <input type="text" name="username" >
+        <label><i class="glyphicon glyphicon-user"></i> Username</label>
+        <input type="text" name="username" class="col-md-6">
       </div>
       <div class="input-group">
         <label>Password</label>
-        <input type="password" name="password">
+        <input data-toggle="password" type="password" name="password" id="pass" class="form-control">
       </div>
+      <!-- An element to toggle between password visibility -->
+      <script type="text/javascript">
+        $("#pass").password('toggle');
+      </script>
       <div class="input-group">
         <button type="submit" class="btn" name="login_user">Login</button>
       </div>
       <p>
-        Belum bikin akun? <a href="register.php">Bikin dulu dong</a>
+        Don't Have an Account? <a href="register.php">Register!</a>
       </p>
     </form>
   </body>
