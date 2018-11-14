@@ -12,13 +12,15 @@
 		Rp.<?php echo $item['harga'] ?>
 		
 	</div>
-	<form class="form-inline" method="post" style="border: none; margin-right: -60px;">
-			<div class="form-group"> 
-				<input type="number" name="quantity" min="1">
-			</div>
-			
-			<div class="form-group"> 
-				<button type="submit" class="btnPesan">Pesan</button>
-			</div>		
-	</form>	
+	<form class="form-inline" method="post" action="cart.php" style="border: none; margin-right: -60px;">
+		<div class="form-group">
+			<input type="number" name="quantity" min="1">
+		</div>
+		
+		<div class="form-group">
+			<input type="hidden" value="<?php echo $item['id'] ?>" name="menu_id">
+			<input type="hidden" value="add_to_cart" name="add_to_cart">
+			<button type="submit" class="btnPesan">Pesan</button>
+		</div>
+	</form>
 </li>

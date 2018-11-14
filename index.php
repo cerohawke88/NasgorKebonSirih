@@ -7,7 +7,7 @@ $minuman1 = $db->runQuery("SELECT * FROM menu WHERE jenis = 'Minuman1'");
 $snack = $db->runQuery("SELECT * FROM menu WHERE jenis = 'Snack'");
 $alamat = $db->runQuery("SELECT * FROM alamat");
 ?>
-<?php include('header.php'); ?>
+<?php include('partials/header.php'); ?>
 <body>
 	<div id="fh5co-container">
 		<div id="fh5co-home" class="js-fullheight" data-section="home">
@@ -176,7 +176,7 @@ $alamat = $db->runQuery("SELECT * FROM alamat");
 			</div>
 		</div>
 
-	<?php include('footer.php'); ?>
+	<?php include('partials/footer.php'); ?>
 </body>
 </html>
 

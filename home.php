@@ -8,7 +8,7 @@ $minuman = $db->runQuery("SELECT * FROM menu WHERE jenis = 'Minuman'");
 $snack = $db->runQuery("SELECT * FROM menu WHERE jenis = 'Snack'"); 
 $alamat = $db->runQuery("SELECT * FROM alamat");
 ?>
-<?php include('header.php'); ?>
+<?php include('partials/header.php'); ?>
 <body>
 	<div id="fh5co-container">
 		<div id="fh5co-home" class="js-fullheight" data-section="home">
@@ -37,6 +37,7 @@ $alamat = $db->runQuery("SELECT * FROM alamat");
 					<div class="fh5co-menu-1">
 						<a href="#" data-nav-section="home">Beranda</a>
 						<a href="#" data-nav-section="menu">Menu</a>
+						<a href="cart.php" onclick="window.location.href='cart.php'">Keranjang</a>
 					</div>
 					<div class="fh5co-logo">
 						<a href="home.php">NGKKS</a>
@@ -67,6 +68,12 @@ $alamat = $db->runQuery("SELECT * FROM alamat");
 									$item = $makanan[$i];
 									include 'templates/menu_makanan.php';
 								}
+								// foreach (range($makanan, (count($makanan)/2) ) as $foods) {
+								// 	// if ($foods == (count($makanan)/2)){
+								// 	// 	break;
+								// 	// }
+								// 	include 'templates/menu_makanan.php';
+								// }
 							?>
 						</ul>
 					</div>
@@ -80,6 +87,10 @@ $alamat = $db->runQuery("SELECT * FROM alamat");
 									$item = $makanan[$i];
 									include 'templates/menu_makanan.php';
 								}
+								// foreach (range((count($makanan)/2), $makanan) as $foods) {
+									
+								// 	include 'templates/menu_makanan.php';
+								// }
 							?>
 						</ul>
 					</div>
@@ -237,6 +248,6 @@ $alamat = $db->runQuery("SELECT * FROM alamat");
 			</div>
 			
 		</div>
-		<?php include('footer.php'); ?>
+		<?php include('partials/footer.php'); ?>
 	</body>
 </html>
