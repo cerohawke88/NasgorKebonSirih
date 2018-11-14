@@ -41,6 +41,7 @@ class Config {
 			header('location:login.php');
 		}
 	}
+	
 }
 
 ?>

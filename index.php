@@ -3,6 +3,7 @@ require_once('config.php');
 $db = new Config();
 $makanan = $db->runQuery("SELECT * FROM menu WHERE jenis = 'Makanan'");
 $minuman = $db->runQuery("SELECT * FROM menu WHERE jenis = 'Minuman'");
+$minuman1 = $db->runQuery("SELECT * FROM menu WHERE jenis = 'Minuman1'");
 $snack = $db->runQuery("SELECT * FROM menu WHERE jenis = 'Snack'");
 $alamat = $db->runQuery("SELECT * FROM alamat");
 ?>
@@ -63,453 +64,89 @@ $alamat = $db->runQuery("SELECT * FROM alamat");
 							<div class="fh5co-food-menu to-animate-2">
 								<h2 class="fh5co-dishes">FOOD</h2>
 								<ul>
+										<?php 
+											foreach($makanan as $row) {
+										?>
 									<li>
 										<div class="fh5co-food-desc">
 											<figure>
-												<img src="images/menu4.jpg" alt="Nagombing" >
+												<img src="<?php echo $row['gambar']; ?>" >
 											</figure>
 											<div>
-												<h3>Nasi Goreng Kambing</h3>
-												<p>Nasi Goreng yang penuh dengan rempah-rempah dan banyaknya Daging Kambing dengan rasa empuk dan tidak bau menimbulkan rasa lezat di mulut!</p>
+												<h3><?php echo $row['nama']; ?></h3>
+												<p><?php echo $row['deskripsi']; ?></p>
 											</div>
 										</div>
 										<div class="fh5co-food-pricing">
-											Rp.41.000
+											<?php echo $row['harga']; ?>
 										</div>
 									</li>
-									<li>
-										<div class="fh5co-food-desc">
-											<figure>
-												<img src="images/menu6.jpg" class="img-responsive" alt="Nagoyam">
-											</figure>
-											<div>
-												<h3>Nasi Goreng Ayam </h3>
-												<p>Nasi Goreng yang penuh dengan rempah-rempah dan banyaknya Daging Ayam dan menimbulkan rasa lezat di mulut!</p>
-											</div>
-										</div>
-										<div class="fh5co-food-pricing">
-											Rp. 41.000
-										</div>
-									</li>
-									<li>
-										<div class="fh5co-food-desc">
-											<figure>
-												<img src="images/menu12.jpg" class="img-responsive" alt="Nagoso">
-											</figure>
-											<div>
-												<h3>Nasi Goreng Sosis Bakso </h3>
-												<p>Nasi Goreng yang penuh dengan rempah-rempah dan banyaknya sosis dan bakso yang menimbulkan rasa lezat di mulut!</p>
-											</div>
-										</div>
-										<div class="fh5co-food-pricing">
-											Rp. 45.000
-										</div>
-									</li>
-									<li>
-										<div class="fh5co-food-desc">
-											<figure>
-												<img src="images/menu14.jpg" class="img-responsive" alt="nambingling">
-											</figure>
-											<div>
-												<h3>Nasi Ala Kambing Guling</h3>
-												<p>Sensai Kambing yang empuk dan tidak abu ditambah dengan hangatnya nasi putih yang membuat sensasi rasa enak di mulut.</p>
-											</div>
-										</div>
-										<div class="fh5co-food-pricing">
-											Rp. 50.000
-										</div>
-									</li>
-									<li>
-										<div class="fh5co-food-desc">
-											<figure>
-												<img src="images/menu10.jpg" class="img-responsive" alt="migorimbing">
-											</figure>
-											<div>
-												<h3>Mie Goreng Kari Kambing</h3>
-												<p>Mie dengan banyaknya rempah-rempah dengan Daging Kambing membuat variasi baru yang wajib untuk dicoba! </p>
-											</div>
-										</div>
-										<div class="fh5co-food-pricing">
-											Rp. 38.000
-										</div>
-									</li>
-									<li>
-										<div class="fh5co-food-desc">
-											<figure>
-												<img src="images/menu6.jpg" class="img-responsive" alt="nasgor">
-											</figure>
-											<div>
-												<h3>Nasi Goreng Polos</h3>
-												<p>Nasi Goreng yang penuh dengan rempah-rempah dan menimbulkan rasa lezat di mulut!</p>
-											</div>
-										</div>
-										<div class="fh5co-food-pricing">
-											Rp. 27.000
-										</div>
-									</li>
+										<?php		
+											}
+										?>
 								</ul>
 							</div>
 						</div>
-						<div class="col-md-6">
-							<div class="fh5co-food-menu to-animate-2">
-								<h2 class="fh5co-dishes">FOOD</h2>
-								<ul>
-									<li>
-										<div class="fh5co-food-desc">
-											<figure>
-												<img src="images/menu2.jpg" class="img-responsive" alt="sambing">
-											</figure>
-											<div>
-												<h3>Sate Kambing</h3>
-												<p>Empuknye daging kambing membuat rasanya kebayang-bayang. Isi 8 tusuk.</p>
-											</div>
-										</div>
-										<div class="fh5co-food-pricing">
-											Rp. 60.000
-										</div>
-									</li>
-									<li>
-										<div class="fh5co-food-desc">
-											<figure>
-												<img src="images/menu9.jpg" class="img-responsive" alt="satimbing">
-											</figure>
-											<div>
-												<h3>Sate Hati Kambing</h3>
-												<p>Variasi baru yang wajib dicobain nih semuanye! Isi 8 tusuk.</p>
-											</div>
-										</div>
-										<div class="fh5co-food-pricing">
-											Rp. 60.000
-										</div>
-									</li>
-									<li>
-										<div class="fh5co-food-desc">
-											<figure>
-												<img src="images/menu15.jpg" class="img-responsive" alt="sayam">
-											</figure>
-											<div>
-												<h3>Sate Ayam</h3>
-												<p>Wajib rasakan bedanye saus kacang di sate ayam punye kite. Isi 10 tusuk.</p>
-											</div>
-										</div>
-										<div class="fh5co-food-pricing">
-											Rp. 35.000
-										</div>
-									</li>
-									<li>
-										<div class="fh5co-food-desc">
-											<figure>
-												<img src="images/menu3.jpg" class="img-responsive" alt="sopbing">
-											</figure>
-											<div>
-												<h3>Sop Kambing</h3>
-												<p>Mau makan yang seger-seger? Wajib cobain sop kambing punye kite!</p>
-											</div>
-										</div>
-										<div class="fh5co-food-pricing">
-											Rp. 40.000
-										</div>
-									</li>
-									<li>
-										<div class="fh5co-food-desc">
-											<figure>
-												<img src="images/menu8.jpg" class="img-responsive" alt="kamling">
-											</figure>
-											<div>
-												<h3>Kambing Guling </h3>
-												<p>Yang mau nyobain rasa kambing utuh silahkan dicoba yang satu ini.</p>
-											</div>
-										</div>
-										<div class="fh5co-food-pricing">
-											Rp. 40.000
-										</div>
-									</li>
-									<li>
-										<div class="fh5co-food-desc">
-											<figure>
-												<img src="images/menu16.jpg" class="img-responsive" alt="telor">
-											</figure>
-											<div>
-												<h3>Telor dadar/Ceplok</h3>
-												<p>Yang satu ini tambahan buat makan kite.</p>
-											</div>
-										</div>
-										<div class="fh5co-food-pricing">
-											Rp. 6.000
-										</div>
-									</li>
-									<li>
-										<div class="fh5co-food-desc">
-											<figure>
-												<img src="images/menu13.jpg" class="img-responsive" alt="telor">
-											</figure>
-											<div>
-												<h3>Nasi Putih</h3>
-												<p>Nasi putih hangat siap santap.</p>
-											</div>
-										</div>
-										<div class="fh5co-food-pricing">
-											Rp. 7.000
-										</div>
-									</li>
-								</ul>
-							</div>
-						</div>
-
-
 						<div class="row row-center">
 							<div class="col-md-6">
 								<div class="fh5co-food-menu to-animate-2">
 									<h2 class="fh5co-drinks">Drinks</h2>
 									<ul>
+									<?php 
+									foreach($minuman as $row) {
+									?>
 										<li>
 											<div class="fh5co-food-desc">
 												<figure>
-													<img src="images/drink1.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
+													<img src="<?php echo $row['gambar']; ?>">
 												</figure>
 												<div>
-													<h3>Aneka Juice</h3>
-													<p>Manisnya rasa buah membuat hati jadi senang.</p>
+													<h3><?php echo $row['nama']; ?></h3>
+													<p><?php echo $row['deskripsi']; ?></p>
 												</div>
 											</div>
 											<div class="fh5co-food-pricing">
-												Rp. 15.000
+												<?php echo $row['harga']; ?>
 											</div>
 										</li>
-										<li>
-											<div class="fh5co-food-desc">
-												<figure>
-													<img src="images/drink2.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-												</figure>
-												<div>
-													<h3>Mix Juice</h3>
-													<p>Percampuran aneka buah membuat rasa baru di mulut.</p>
-												</div>
-											</div>
-											<div class="fh5co-food-pricing">
-												Rp. 18.000
-											</div>
-										</li>
-										<li>
-											<div class="fh5co-food-desc">
-												<figure>
-													<img src="images/drink3.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-												</figure>
-												<div>
-													<h3>Es Kelapa Muda</h3>
-													<p>Segernye Nampolll</p>
-												</div>
-											</div>
-											<div class="fh5co-food-pricing">
-												Rp. 20.000
-											</div>
-										</li>
-										<li>
-											<div class="fh5co-food-desc">
-												<figure>
-													<img src="images/drink4.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-												</figure>
-												<div>
-													<h3>Es Jeruk/Panas</h3>
-													<p>asem manis seger di mulut.</p>
-												</div>
-											</div>
-											<div class="fh5co-food-pricing">
-												Rp. 10.000
-											</div>
-										</li>
-										<li>
-											<div class="fh5co-food-desc">
-												<figure>
-													<img src="images/drink5.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-												</figure>
-												<div>
-													<h3>Es Lemon Tea</h3>
-													<p>Asem seger di mulut.</p>
-												</div>
-											</div>
-											<div class="fh5co-food-pricing">
-												Rp. 8.000
-											</div>
-										</li>
-										<li>
-											<div class="fh5co-food-desc">
-												<figure>
-													<img src="images/drink6.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-												</figure>
-												<div>
-													<h3>Es Teh Manis/Panas</h3>
-													<p>Manis segerr di mulut.</p>
-												</div>
-											</div>
-											<div class="fh5co-food-pricing">
-												Rp. 5.000
-											</div>
-										</li>
+										<?php		
+											}
+										?>
 									</ul>
 								</div>
 							</div> 
-							<div class="row row-padded">
-								<div class="col-md-6">
-									<div class="fh5co-food-menu to-animate-2">
-										<h2 class="fh5co-drinks">Drinks</h2>
-										<ul>
-											<li>
-												<div class="fh5co-food-desc">
-													<figure>
-														<img src="images/res_img_5.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-													</figure>
-													<div>
-														<h3>Es Teh Tawar</h3>
-														<p>Bagi yang gak suka manis nih minumannye.</p>
-													</div>
-												</div>
-												<div class="fh5co-food-pricing">
-													Rp.4.000
-												</div>
-											</li>
-											<li>
-												<div class="fh5co-food-desc">
-													<figure>
-														<img src="images/res_img_6.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-													</figure>
-													<div>
-														<h3>Teh Tawar Panas</h3>
-														<p>Bagi yang gak suka manis dan pingin yang anget-anget nih minumannye.</p>
-													</div>
-												</div>
-												<div class="fh5co-food-pricing">
-													Rp. 2.000
-												</div>
-											</li>
-											<li>
-												<div class="fh5co-food-desc">
-													<figure>
-														<img src="images/res_img_7.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-													</figure>
-													<div>
-														<h3>Soda Susu</h3>
-														<p>Rasakan sensasinye!.</p>
-													</div>
-												</div>
-												<div class="fh5co-food-pricing">
-													Rp. 15.000
-												</div>
-											</li>
-											<li>
-												<div class="fh5co-food-desc">
-													<figure>
-														<img src="images/res_img_5.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-													</figure>
-													<div>
-														<h3>Soda Gembira</h3>
-														<p>Rasakan Sensasinye!.</p>
-													</div>
-												</div>
-												<div class="fh5co-food-pricing">
-													Rp.15.000
-												</div>
-											</li>
-											<li>
-												<div class="fh5co-food-desc">
-													<figure>
-														<img src="images/res_img_5.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-													</figure>
-													<div>
-														<h3>Kopi Hitam</h3>
-														<p>Kopi hitam pilihan, pas banget nih buat yang demen ngopi.</p>
-													</div>
-												</div>
-												<div class="fh5co-food-pricing">
-													Rp.5.000
-												</div>
-											</li>
-											<li>
-												<div class="fh5co-food-desc">
-													<figure>
-														<img src="images/res_img_5.jpg" class="img-responsive" alt="Free HTML5 Templates by FREEHTML5.co">
-													</figure>
-													<div>
-														<h3>Air Mineral</h3>
-														<p>Buat yang demen bening-bening.</p>
-													</div>
-												</div>
-												<div class="fh5co-food-pricing">
-													Rp.5.000
-												</div>
-											</li>
-										</ul>
-									</div>
-								</div>
-							</div>	
-						</div>
-
 						<div class="row row-center">
 							<div class="col-md-6">
 								<div class="fh5co-food-menu to-animate-2">
-									<h2 class="fh5co-drinks">Snack</h2>
+									<h2 class="fh5co-snacks">Snack</h2>
 									<ul>
+									<?php 
+									foreach($snack as $row) {
+									?>
 										<li>
 											<div class="fh5co-food-desc">
 												<figure>
-													<img src="images/snack1.jpg" class="img-responsive" alt="kerupukB">
+													<img src="<?php echo $row['gambar']; ?>">
 												</figure>
 												<div>
-													<h3>Kerupuk Bangka</h3>
-													<p>Rasa Ikan Tenggiri, Gurih dan renyah!</p>
+													<h3><?php echo $row['nama']; ?></h3>
+													<p><?php echo $row['deskripsi']; ?></p>
 												</div>
 											</div>
 											<div class="fh5co-food-pricing">
-												Rp. 7.000
+												<?php echo $row['harga']; ?>
 											</div>
 										</li>
-										<li>
-											<div class="fh5co-food-desc">
-												<figure>
-													<img src="images/snack2.jpg" class="img-responsive" alt="emping">
-												</figure>
-												<div>
-													<h3>Emping</h3>
-													<p>Melinjo asli, super renyah</p>
-												</div>
-											</div>
-											<div class="fh5co-food-pricing">
-												Rp. 15.000
-											</div>
-										</li>							
-									</ul>
-								</div>
-							</div> 
-							<div class="row row-padded">
-								<div class="col-md-6">
-									<div class="fh5co-food-menu to-animate-2">
-										<h2 class="fh5co-drinks">Snack</h2>
-										<ul>
-											<li>
-												<div class="fh5co-food-desc">
-													<figure>
-														<img src="images/snack3.jpg" class="img-responsive" alt="kerupukK">
-													</figure>
-													<div>
-														<h3>Kerupuk kampung</h3>
-														<p>Kriuk-kriuk sedaaap!!!</p>
-													</div>
-												</div>
-												<div class="fh5co-food-pricing">
-													Rp.2.000
-												</div>
-											</li>											
+										<?php		
+											}
+										?>
 										</ul>
 									</div>
 								</div>
 							</div>	
 						</div>
+					</div>
 				</div>
-
-				</div>
-
-
-
 		<div id="fh5co-events" data-section="events" style="background-image: url(images/slide_2.jpg);" data-stellar-background-ratio="0.5">
 			<div class="fh5co-overlay"></div>
 			<div class="container">
