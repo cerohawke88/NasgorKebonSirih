@@ -68,12 +68,6 @@ $alamat = $db->runQuery("SELECT * FROM alamat");
 									$item = $makanan[$i];
 									include 'templates/menu_makanan.php';
 								}
-								// foreach (range($makanan, (count($makanan)/2) ) as $foods) {
-								// 	// if ($foods == (count($makanan)/2)){
-								// 	// 	break;
-								// 	// }
-								// 	include 'templates/menu_makanan.php';
-								// }
 							?>
 						</ul>
 					</div>
@@ -87,10 +81,6 @@ $alamat = $db->runQuery("SELECT * FROM alamat");
 									$item = $makanan[$i];
 									include 'templates/menu_makanan.php';
 								}
-								// foreach (range((count($makanan)/2), $makanan) as $foods) {
-									
-								// 	include 'templates/menu_makanan.php';
-								// }
 							?>
 						</ul>
 					</div>

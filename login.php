@@ -12,8 +12,8 @@
     <div class="header">
     <title>Masuk - NGKKS</title>
       <p>
-        <a href="index.php" class="" style="float: left">
-          <span class="glyphicon glyphicon-arrow-left"></span>
+        <a href="index.php" style="float: right">
+          <span class="glyphicon glyphicon-home"></span>
         </a>
       </p>
       <br><h3>Nasi Goreng Kambing Kebon Sirih</h2>
@@ -27,8 +27,8 @@
         <input type="text" name="username" class="col-md-6">
       </div>
       <div class="input-group">
-        <label>Password</label>
-        <input data-toggle="password" type="password" name="password" id="pass" class="form-control">
+        <label><i class="glyphicon glyphicon-lock"></i> Password</label>
+        <input data-toggle="password" type="password" name="password" id="pass" class="form-control" size="32">
       </div>
       <!-- An element to toggle between password visibility -->
       <script type="text/javascript">
@@ -38,7 +38,7 @@
         <button type="submit" class="btn" name="login_user">Login</button>
       </div>
       <p>
-        Don't Have an Account? <a href="register.php">Register!</a>
+        Belum punya akun? <a href="register.php">Daftar disini!</a>
       </p>
     </form>
   </body>
