@@ -4,7 +4,7 @@ require_once('config.php');
 $db = new Config();
 $db->cekLogin();
 $alamat = $db->runQuery("SELECT * FROM alamat");
-$users = $db->runQuery("SELECT * FROM users WHERE username = 'dzaky'");
+$users = $db->runQuery("SELECT * FROM users WHERE username = 'Vicky'");
 ?>
 <?php include('partials/header.php'); ?>
 <body>
@@ -45,6 +45,14 @@ $users = $db->runQuery("SELECT * FROM users WHERE username = 'dzaky'");
 						<a href="#" data-nav-section="events">Outlet</a>
 						<a href="#" data-nav-section="reservation">Order</a>
 						<a href="logout.php" onclick="window.location.href='logout.php'"> Logout</a>
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							<?php 
+								foreach($users as $row) {
+							?>
+							<?php echo $row['username']?>
+							<span class="caret"></span>
+						<?php } ?>
+						</a>
 					</div>
 					<div id="navbar-cart" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
@@ -59,14 +67,7 @@ $users = $db->runQuery("SELECT * FROM users WHERE username = 'dzaky'");
 				</div>
 			</div>
 		</div>
-		<div class="card">
-				<?php 
-					foreach($users as $row) {
-				?>
-		  <img src="user.png" alt="" style="width:100%">
-		  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><h1><?php echo $row['username']?></h1><span class="caret"></span></a>
-		<?php } ?>
-		</div>
+		
 		<div id="fh5co-menus" data-section="menu">
 			<div class="container">
 				<div class="row text-center fh5co-heading row-padded">
