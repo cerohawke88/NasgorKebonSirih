@@ -4,7 +4,7 @@ require_once('config.php');
 $db = new Config();
 $db->cekLogin();
 $alamat = $db->runQuery("SELECT * FROM alamat");
-$users = $db->runQuery("SELECT * FROM users WHERE username = 'Vicky'");
+$users = $db->runQuery("SELECT * FROM users WHERE username = '" . $_SESSION['username'] . "'");
 ?>
 <?php include('partials/header.php'); ?>
 <body>
@@ -43,10 +43,28 @@ $users = $db->runQuery("SELECT * FROM users WHERE username = 'Vicky'");
 					</div>
 					<div class="fh5co-menu-2">
 						<a href="#" data-nav-section="events">Outlet</a>
+<<<<<<< HEAD
 						<a href="#" data-nav-section="reservation">Order</a>
 						<a href="logout.php" onclick="window.location.href='logout.php'"> Logout</a>
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 							<span class="caret"></span>						</a>
+=======
+						<!-- <a href="logout.php" onclick="window.location.href='logout.php'"> Logout</a> -->
+						<div class="dropdown">
+							<a href="#" class="dropbtn" data-toggle="dropdown" onclick="myFunction()">
+								<?php 
+									foreach($users as $row) {
+								?>
+								<?php echo $row['username']?>
+								<span class="caret"></span>
+							<?php } ?>
+							</a>
+							<ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="myDropdown">
+							    <li><a href="#">Akun saya</a></li>
+							    <li><a href="logout.php" onclick="window.location.href='logout.php'">Logout</a></li>
+							</ul>
+						</div>
+>>>>>>> 57b0091f871cbe8117b75520b24fcaea300e2db2
 					</div>
 					<div id="navbar-cart" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
@@ -115,73 +133,6 @@ $users = $db->runQuery("SELECT * FROM users WHERE username = 'Vicky'");
 				</div>
 			</div>
 		</div>
-		<div id="fh5co-contact" data-section="reservation">
-			<div class="container">
-				<div class="row text-center fh5co-heading row-padded">
-					<div class="col-md-8 col-md-offset-2">
-						<h2 class="heading to-animate">Reserve a Menu</h2>
-						<p class="sub-heading to-animate">Buat semuanye yang lagi dijalan atau sibuk dapet mesen dulu nih makanannye nanti diambil. </p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-6 to-animate-2">
-						<h3>Contact Info</h3>
-						<ul class="fh5co-contact-info">
-							<li class="fh5co-contact-address ">
-								<li><i class="icon-phone"></i> 0811190775 <br> 0811864011 <br> (021) 74702499 </li>
-								<li><i class="icon-facebook"></i>nasigorengkebonsirih</li>
-								<li><i class="icon-instagram"></i>nasigorengkambingkebonsirih_ </li>
-							</ul>
-						</div>
-						<?
-						session_start();
-						if (!isset($_SESSION['username'])){
-						header('Location:./login.php');
-						}
-						echo'anda sukses login';
-						?>
-						<div class="col-md-6 to-animate-2">
-							<h3>Order Form</h3>
-							<div class="form-group ">
-								<label for="name" class="sr-only">Name</label>
-								<input id="name" class="form-control" placeholder="Name" type="text">
-							</div>
-							<div class="form-group ">
-								<label for="No Telp" class="sr-only">Number</label>
-								<input id="No Telp" class="form-control" placeholder="No Telp" type="No Telp">
-							</div>
-							
-							<div class="form-group">
-								<label for="occation" class="sr-only">Occation</label>
-								<select class="form-control" id="occation">
-									<option>Pilih Menu</option>
-									<?php
-										include('server.php');
-										$query = "SELECT nama FROM menu";
-										$db = mysqli_query($db, $query);
-										while ($d=mysqli_fetch_assoc($db)) {
-											echo "<option value='{".$d['nama']."}'>".$d['nama']."</option>";
-										}
-									?>
-								</select>
-							</div>
-							<div class="form-group ">
-								<label for="date" class="sr-only">Date</label>
-								<input id="date" class="form-control" placeholder="Date &amp; Time" type="text">
-							</div>
-							
-							<div class="form-group ">
-								<label for="message" class="sr-only">Message</label>
-								<textarea name="" id="message" cols="30" rows="5" class="form-control" placeholder="Message"></textarea>
-							</div>
-							<div class="form-group ">
-								<input class="btn btn-primary" value="Send Message" type="submit">
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			
 		</div>
 		<?php
 			include('partials/footer.php');

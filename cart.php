@@ -8,7 +8,7 @@ $total_harga = 0;
 $total_item = 0;
 
 $output = '
-<div class="table-responsive" id="order_table">
+<div class="table-responsive js-sticky" id="order_table">
     <table class="table table-bordered table-striped">
         <tr>  
             <th width="40%">Menu</th>  
