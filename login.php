@@ -24,7 +24,7 @@
       <?php include('errors.php'); ?>
       <div class="input-group">
         <label><i class="glyphicon glyphicon-user"></i> Username</label>
-        <input type="text" name="username" class="col-md-6">
+        <input type="text" name="username" class="col-md-6 form-control">
       </div>
       <div class="input-group">
         <label><i class="glyphicon glyphicon-lock"></i> Password</label>

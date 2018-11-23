@@ -8,24 +8,28 @@ if(isset($_POST["aksi"]))
 	{
 		if(isset($_SESSION["menu_cart"]))
 		{
-			$is_available = 0;
-			foreach($_SESSION["menu_cart"] as $keys => $values)
+
+			if (isset($_SESSION["username"])) 
 			{
-				if($_SESSION["menu_cart"][$keys]['id'] == $_POST["id"])
+				$is_available = 0;
+				foreach($_SESSION["menu_cart"] as $keys => $values)
 				{
-					$is_available++;
-					$_SESSION["menu_cart"][$keys]['jumlah'] = $_SESSION["menu_cart"][$keys]['jumlah'] + $_POST["jumlah"];
+					if($_SESSION["menu_cart"][$keys]['id'] == $_POST["id"])
+					{
+						$is_available++;
+						$_SESSION["menu_cart"][$keys]['jumlah'] = $_SESSION["menu_cart"][$keys]['jumlah'] + $_POST["jumlah"];
+					}
 				}
-			}
-			if($is_available == 0)
-			{
-				$item_array = array(
-					'id'               =>     $_POST["id"],  
-					'nama'             =>     $_POST["nama"],  
-					'harga'            =>     $_POST["harga"],  
-					'jumlah'         =>     $_POST["jumlah"]
-				);
-				$_SESSION["menu_cart"][] = $item_array;
+				if($is_available == 0)
+				{
+					$item_array = array(
+						'id'               =>     $_POST["id"],  
+						'nama'             =>     $_POST["nama"],  
+						'harga'            =>     $_POST["harga"],  
+						'jumlah'         =>     $_POST["jumlah"]
+					);
+					$_SESSION["menu_cart"][] = $item_array;
+				}
 			}
 		}
 		else
