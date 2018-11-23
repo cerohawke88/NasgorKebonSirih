@@ -43,12 +43,11 @@ $users = $db->runQuery("SELECT * FROM users WHERE username = '" . $_SESSION['use
 					</div>
 					<div class="fh5co-menu-2">
 						<a href="#" data-nav-section="events">Outlet</a>
-<<<<<<< HEAD
 						<a href="#" data-nav-section="reservation">Order</a>
 						<a href="logout.php" onclick="window.location.href='logout.php'"> Logout</a>
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							<span class="caret"></span>						</a>
-=======
+							<span class="caret"></span>						
+						</a>
 						<!-- <a href="logout.php" onclick="window.location.href='logout.php'"> Logout</a> -->
 						<div class="dropdown">
 							<a href="#" class="dropbtn" data-toggle="dropdown" onclick="myFunction()">
@@ -64,7 +63,6 @@ $users = $db->runQuery("SELECT * FROM users WHERE username = '" . $_SESSION['use
 							    <li><a href="logout.php" onclick="window.location.href='logout.php'">Logout</a></li>
 							</ul>
 						</div>
->>>>>>> 57b0091f871cbe8117b75520b24fcaea300e2db2
 					</div>
 					<div id="navbar-cart" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
