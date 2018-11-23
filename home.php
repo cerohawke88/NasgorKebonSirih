@@ -46,13 +46,7 @@ $users = $db->runQuery("SELECT * FROM users WHERE username = 'Vicky'");
 						<a href="#" data-nav-section="reservation">Order</a>
 						<a href="logout.php" onclick="window.location.href='logout.php'"> Logout</a>
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							<?php 
-								foreach($users as $row) {
-							?>
-							<?php echo $row['username']?>
-							<span class="caret"></span>
-						<?php } ?>
-						</a>
+							<span class="caret"></span>						</a>
 					</div>
 					<div id="navbar-cart" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
@@ -194,4 +188,3 @@ $users = $db->runQuery("SELECT * FROM users WHERE username = 'Vicky'");
 			include('partials/ajax.php');
 		?>
 	</body>
-</html>

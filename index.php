@@ -3,7 +3,6 @@ require_once('config.php');
 $db = new Config();
 $makanan = $db->runQuery("SELECT * FROM menu WHERE jenis = 'Makanan'");
 $minuman = $db->runQuery("SELECT * FROM menu WHERE jenis = 'Minuman'");
-$minuman1 = $db->runQuery("SELECT * FROM menu WHERE jenis = 'Minuman1'");
 $snack = $db->runQuery("SELECT * FROM menu WHERE jenis = 'Snack'");
 $alamat = $db->runQuery("SELECT * FROM alamat");
 ?>
