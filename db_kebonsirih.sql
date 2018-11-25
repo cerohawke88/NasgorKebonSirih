@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 25, 2018 at 09:12 AM
+-- Generation Time: Nov 25, 2018 at 09:16 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -21,6 +21,49 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_kebonsirih`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `alamat`
+--
+
+CREATE TABLE `alamat` (
+  `id` int(11) NOT NULL,
+  `cabang` varchar(200) NOT NULL,
+  `telp` varchar(200) NOT NULL,
+  `alamat` varchar(200) NOT NULL,
+  `keterangan` varchar(200) NOT NULL,
+  `lat` varchar(100) NOT NULL,
+  `lng` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `alamat`
+--
+
+INSERT INTO `alamat` (`id`, `cabang`, `telp`, `alamat`, `keterangan`, `lat`, `lng`) VALUES
+(1, 'Tanah Abang', '0811864011', 'Jl. Kebon Sirih Raya.', 'Buka Tiap Hari dari jam 11.00 - 02.00', '-6.183317', '106.825728'),
+(2, 'Lebak Bulus', '(021)7666302', 'Jl. Karang Tengah Raya no.1c', 'Buka tiap hari dari jam 11.00-23.00', '-6.266844', '106.800501'),
+(3, 'Pasaraya Grande', '085945040267', 'Jl. Dapur raya PG Lt LG #W1', 'Buka tiap hari dari jam 10.00-21.00', '-6.243947', '106.802905'),
+(4, 'Bintaro Exchange Mall', '085727555723', 'Food Exchange,Lt 1 BEMall', 'Buka tiap hari dari jam 10.00-22.00', '-6.285386', '106.728054'),
+(5, 'Taman Kuliner', '085776567351', 'Jl. Otista Raya,Ciputat', 'Buka tiap hari dari jam 04.00-23.00', '-6.322897', '106.745194'),
+(6, 'Tanggerang Selatan', '(021) 7415881', 'Jl. Pajajaran no.45, Pamulang', 'buka tiap hari dari jam 11.00-23.00', '-6.340167', '106.738612');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cart`
+--
+
+CREATE TABLE `cart` (
+  `username` varchar(191) NOT NULL,
+  `id_menu` int(10) NOT NULL,
+  `nama` varchar(191) NOT NULL,
+  `harga` int(11) NOT NULL,
+  `jumlah` int(11) NOT NULL,
+  `total` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
