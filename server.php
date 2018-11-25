@@ -80,12 +80,12 @@ if (isset($_POST['login_user'])) {
       $logged_in_user = mysqli_fetch_assoc($results);
       if ($logged_in_user['level'] == '1') {
 
-        $_SESSION['username'] = $logged_in_user;
+        $_SESSION['username'] = $logged_in_user['username'];
         $_SESSION['success']  = "You are now logged in";
         header('location: tables.php');     
     consolelog($results);
       }else{
-        $_SESSION['username'] = $logged_in_user;
+        $_SESSION['username'] = $logged_in_user['username'];
         $_SESSION['success']  = "You are now logged in";
 
         header('location: home.php');

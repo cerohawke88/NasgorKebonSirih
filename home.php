@@ -4,7 +4,7 @@ require_once('config.php');
 $db = new Config();
 $db->cekLogin();
 $alamat = $db->runQuery("SELECT * FROM alamat");
-$users = $db->runQuery("SELECT * FROM users WHERE username = '" . $_SESSION['username'] . "'");
+$users = $db->runQuery("SELECT * FROM users WHERE username = ' ". $_SESSION["username"] ." '");
 ?>
 <?php include('partials/header.php'); ?>
 <body>
@@ -44,9 +44,6 @@ $users = $db->runQuery("SELECT * FROM users WHERE username = '" . $_SESSION['use
 					<div class="fh5co-menu-2">
 						<a href="#" data-nav-section="events">Outlet</a>
 						<a href="#" data-nav-section="reservation">Order</a>
-						<a href="logout.php" onclick="window.location.href='logout.php'"> Logout</a>
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							<span class="caret"></span>						
 						</a>
 						<!-- <a href="logout.php" onclick="window.location.href='logout.php'"> Logout</a> -->
 						<div class="dropdown">
@@ -64,6 +61,7 @@ $users = $db->runQuery("SELECT * FROM users WHERE username = '" . $_SESSION['use
 							</ul>
 						</div>
 					</div>
+						</div>
 					<div id="navbar-cart" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
 							<li>

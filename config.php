@@ -22,7 +22,7 @@ class Config {
 		$result = mysqli_query($this->conn,$query);
 		while($row=mysqli_fetch_assoc($result)) {
 			$resultset[] = $row;
-		}		
+		}
 		if(!empty($resultset))
 			return $resultset;
 	}

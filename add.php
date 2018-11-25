@@ -1,10 +1,6 @@
 <html>
-<head>
-	<title>Add Users</title>
-</head>
- 
 <body>
-	<a href="index.php">Go to Home</a>
+	<a href="table.php"> </a>
 	<br/><br/>
  
 	<form action="add.php" method="post" name="form1">
@@ -14,20 +10,20 @@
 				<td><input type="text" name="id"></td>
 			</tr>
 			<tr> 
-				<td>username</td>
-				<td><input type="text" name="name"></td>
+				<td>Jenis</td>
+				<td><input type="text" name="jenis"></td>
 			</tr>
 			<tr> 
-				<td>Email</td>
-				<td><input type="text" name="email"></td>
+				<td>Nama Makanan</td>
+				<td><input type="text" name="NamaMakanan"></td>
 			</tr>
 			<tr> 
-				<td>password</td>
-				<td><input type="text" name="password"></td>
+				<td>Deskripsi</td>
+				<td><input type="text" name="Deskripsi"></td>
 			</tr>
 			<tr> 
-				<td>saldo</td>
-				<td><input type="text" name="saldo"></td>
+				<td>Harga</td>
+				<td><input type="text" name="Harga"></td>
 			</tr>
 			<tr> 
 				<td></td>
@@ -41,19 +37,20 @@
 	// Check If form submitted, insert form data into users table.
 	if(isset($_POST['Submit'])) {
 		$id = $_POST['id'];
-		$name = $_POST['username'];
-		$email = $_POST['email'];
-		$password = $_POST['password'];
-		$saldo = $_POST['saldo'];
+		$nama = $_POST['jenis'];
+		$nama = $_POST['nama'];
+		$deskripsi= $_POST['deskripsi'];
+		$harga = $_POST['harga'];
+		
 		
 		// include database connection file
 		include_once("config.php");
 				
 		// Insert user data into table
-		$result = mysqli_query($mysqli, "INSERT INTO users(id,username,email,password,saldo) VALUES('$id','$name','$email','$password','$saldo')");
+		$result = mysqli_query($mysqli, "INSERT INTO users(id,jenis,nama,gambar,deskripsi,harga) VALUES('$id','$jenis','$nama','$gambar','$harga')");
 		
 		// Show message when user added
-		echo "User added successfully. <a href='index.php'>View Users</a>";
+		echo "User added successfully. <a href='table.php'></a>";
 	}
 	?>
 </body>
