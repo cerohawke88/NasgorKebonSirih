@@ -43,10 +43,6 @@ $users = $db->runQuery("SELECT * FROM users WHERE username = '" . $_SESSION['use
 					</div>
 					<div class="fh5co-menu-2">
 						<a href="#" data-nav-section="events">Outlet</a>
-						<a href="#" data-nav-section="reservation">Order</a>
-						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-							<span class="caret"></span>						
-						</a>
 						<!-- <a href="logout.php" onclick="window.location.href='logout.php'"> Logout</a> -->
 						<div class="dropdown">
 							<a href="#" class="dropbtn" data-toggle="dropdown" onclick="myFunction()">
