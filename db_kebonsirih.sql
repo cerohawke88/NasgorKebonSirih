@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 25, 2018 at 09:16 AM
+-- Generation Time: Nov 28, 2018 at 10:34 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -49,21 +49,6 @@ INSERT INTO `alamat` (`id`, `cabang`, `telp`, `alamat`, `keterangan`, `lat`, `ln
 (4, 'Bintaro Exchange Mall', '085727555723', 'Food Exchange,Lt 1 BEMall', 'Buka tiap hari dari jam 10.00-22.00', '-6.285386', '106.728054'),
 (5, 'Taman Kuliner', '085776567351', 'Jl. Otista Raya,Ciputat', 'Buka tiap hari dari jam 04.00-23.00', '-6.322897', '106.745194'),
 (6, 'Tanggerang Selatan', '(021) 7415881', 'Jl. Pajajaran no.45, Pamulang', 'buka tiap hari dari jam 11.00-23.00', '-6.340167', '106.738612');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `cart`
---
-
-CREATE TABLE `cart` (
-  `username` varchar(191) NOT NULL,
-  `id_menu` int(10) NOT NULL,
-  `nama` varchar(191) NOT NULL,
-  `harga` int(11) NOT NULL,
-  `jumlah` int(11) NOT NULL,
-  `total` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -123,6 +108,35 @@ INSERT INTO `menu` (`id`, `jenis`, `nama`, `gambar`, `deskripsi`, `harga`) VALUE
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL,
+  `username` varchar(191) NOT NULL,
+  `total_harga` int(11) NOT NULL,
+  `catatan` varchar(255) NOT NULL,
+  `waktu_ambil` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders_detail`
+--
+
+CREATE TABLE `orders_detail` (
+  `id_order` int(11) NOT NULL,
+  `username` varchar(191) NOT NULL,
+  `id_menu` int(10) NOT NULL,
+  `nama` varchar(191) NOT NULL,
+  `harga` int(11) NOT NULL,
+  `jumlah` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -159,6 +173,20 @@ ALTER TABLE `menu`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `username` (`username`);
+
+--
+-- Indexes for table `orders_detail`
+--
+ALTER TABLE `orders_detail`
+  ADD UNIQUE KEY `UNIQUE` (`id_order`),
+  ADD KEY `username` (`username`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -175,10 +203,32 @@ ALTER TABLE `users`
 ALTER TABLE `menu`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 --
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;COMMIT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `orders`
+--
+ALTER TABLE `orders`
+  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`username`) REFERENCES `users` (`username`);
+
+--
+-- Constraints for table `orders_detail`
+--
+ALTER TABLE `orders_detail`
+  ADD CONSTRAINT `orders_detail_ibfk_1` FOREIGN KEY (`username`) REFERENCES `users` (`username`),
+  ADD CONSTRAINT `orders_detail_ibfk_2` FOREIGN KEY (`id_order`) REFERENCES `orders` (`id`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
