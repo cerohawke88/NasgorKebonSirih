@@ -43,23 +43,20 @@ $users = $db->runQuery("SELECT * FROM users WHERE username = ' ". $_SESSION["use
 					</div>
 					<div class="fh5co-menu-2">
 						<a href="#" data-nav-section="events">Outlet</a>
-						<a href="#" data-nav-section="reservation">Order</a>
+						<a href="#" data-toggle="dropdown" onclick="myFunction()">
+							<?php 
+								 echo $_SESSION['username'];
+							?>
+							<span class="caret"></span>
 						</a>
-						<!-- <a href="logout.php" onclick="window.location.href='logout.php'"> Logout</a> -->
 						<div class="dropdown">
-							<a href="#" class="dropbtn" data-toggle="dropdown" onclick="myFunction()">
-								<?php 
-									foreach($users as $row) {
-								?>
-								<?php echo $row['username']?>
-								<span class="caret"></span>
-							<?php } ?>
-							</a>
+							
 							<ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="myDropdown">
 							    <li><a href="#">Akun saya</a></li>
 							    <li><a href="logout.php" onclick="window.location.href='logout.php'">Logout</a></li>
 							</ul>
 						</div>
+						<!-- <a href="logout.php" onclick="window.location.href='logout.php'"> Logout</a> -->
 					</div>
 						</div>
 					<div id="navbar-cart" class="navbar-collapse collapse">

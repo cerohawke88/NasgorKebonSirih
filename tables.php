@@ -64,18 +64,13 @@ $menu = $db->runQuery("SELECT * FROM menu");
           </div>
           <div class="collapse navbar-collapse justify-content-end">
             <ul class="navbar-nav">
-              <li class="nav-item dropdown">
-                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <li class="nav-item">
+                <a class="nav-link" href="add.php" id="navbarMenuLink" aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons">Tambah</i>
-                  <span class="notification"></span>
-                  <p class="d-lg-none d-md-block">
-                    Some Actions
-                  </p>
                 </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                <div class="menu menu-right" aria-labelledby="navbarMenuLink">
                 </div>
               </li>
-          
           <div class="collapse navbar-collapse justify-content-end">
             <ul class="navbar-nav">
               <li class="nav-item dropdown">
@@ -124,7 +119,7 @@ $menu = $db->runQuery("SELECT * FROM menu");
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
-                    <table class="table table-hover">
+                    <table class="table">
                       <tr>
                       <thead class="">
                         <th>
@@ -138,6 +133,12 @@ $menu = $db->runQuery("SELECT * FROM menu");
                         </th>
                         <th>
                           Harga
+                        </th>
+                        <th>
+                          update
+                        </th>
+                        <th>
+                          delete
                         </th>
                       </thead>
                       <tbody>
@@ -155,6 +156,12 @@ $menu = $db->runQuery("SELECT * FROM menu");
                         </td>
                         <td>
                           <?php echo $row['harga'];?>
+                        </td>
+                        <td>
+                          <a class="btn btn-primary on-click" href="update.php?id=<?php echo $row['id']?>">update</a>
+                        </td>
+                        <td>
+                          <a class="btn btn-danger on-click right" onclick="return confirm('Ingin menghapus?')" href="delete.php?id=<?php echo $row['id']?>">delete</a>
                         </td>
                       </tr>
                         <?php }

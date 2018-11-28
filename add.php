@@ -1,6 +1,12 @@
+<?php
+require_once('config.php');
+include('server.php');
+$db = new Config();
+$menu = $db->runQuery("SELECT * FROM menu");
+?>
 <html>
 <body>
-	<a href="table.php"> </a>
+	<a href="tables.php"> </a>
 	<br/><br/>
  
 	<form action="add.php" method="post" name="form1">
@@ -15,15 +21,15 @@
 			</tr>
 			<tr> 
 				<td>Nama Makanan</td>
-				<td><input type="text" name="NamaMakanan"></td>
+				<td><input type="text" name="nama"></td>
 			</tr>
 			<tr> 
 				<td>Deskripsi</td>
-				<td><input type="text" name="Deskripsi"></td>
+				<td><input type="text" name="deskripsi"></td>
 			</tr>
 			<tr> 
 				<td>Harga</td>
-				<td><input type="text" name="Harga"></td>
+				<td><input type="text" name="harga"></td>
 			</tr>
 			<tr> 
 				<td></td>
@@ -31,27 +37,5 @@
 			</tr>
 		</table>
 	</form>
-	
-	<?php
- 
-	// Check If form submitted, insert form data into users table.
-	if(isset($_POST['Submit'])) {
-		$id = $_POST['id'];
-		$nama = $_POST['jenis'];
-		$nama = $_POST['nama'];
-		$deskripsi= $_POST['deskripsi'];
-		$harga = $_POST['harga'];
-		
-		
-		// include database connection file
-		include_once("config.php");
-				
-		// Insert user data into table
-		$result = mysqli_query($mysqli, "INSERT INTO users(id,jenis,nama,gambar,deskripsi,harga) VALUES('$id','$jenis','$nama','$gambar','$harga')");
-		
-		// Show message when user added
-		echo "User added successfully. <a href='table.php'></a>";
-	}
-	?>
 </body>
 </html>
