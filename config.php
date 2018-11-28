@@ -27,7 +27,7 @@ class Config {
 
 		while($row=mysqli_fetch_assoc($result)) {
 			$resultset[] = $row;
-		}		
+		}
 		if(!empty($resultset))
 			return $resultset;
 	}
@@ -36,6 +36,10 @@ class Config {
 		$result  = mysqli_query($this->conn,$query);
 		$rowcount = mysqli_num_rows($result);
 		return $rowcount;	
+	}
+
+	function getCon() {
+		return $this->conn;
 	}
 
 	function cekLogin() {

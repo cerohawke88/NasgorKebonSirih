@@ -5,7 +5,13 @@
   font-weight: normal;
   font-style: normal;
 }
-
+.lingkaran {
+    width:100px;
+    height:100px;
+    background-color:#f00;
+    border-radius:50%;
+    overflow:hidden;
+}
 body {
   font-family: "Merriweather", serif;
   font-size: 18px;
