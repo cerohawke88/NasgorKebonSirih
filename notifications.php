@@ -32,13 +32,13 @@
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="nav-item ">
-            <a class="nav-link" href="./tables.php">
+            <a class="nav-link" href="tables.php">
               <i class="material-icons">content_paste</i>
               <p>Table List</p>
             </a>
           </li>
           <li class="nav-item active ">
-            <a class="nav-link" href="./notifications.php">
+            <a class="nav-link" href="notifications.php">
               <i class="material-icons">notifications</i>
               <p>Notifications</p>
             </a>
