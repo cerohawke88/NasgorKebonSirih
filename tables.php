@@ -65,8 +65,8 @@ $menu = $db->runQuery("SELECT * FROM menu");
           <div class="collapse navbar-collapse justify-content-end">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="add.php" id="navbarMenuLink" aria-haspopup="true" aria-expanded="false">
-                  <i class="material-icons">Tambah</i>
+                <a class="btn btn-success btn-sm" href="add.php" >
+                  <i class="lingkaran">Tambah</i>
                 </a>
                 <div class="menu menu-right" aria-labelledby="navbarMenuLink">
                 </div>
