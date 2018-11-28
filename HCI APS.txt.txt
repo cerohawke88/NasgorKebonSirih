@@ -1,0 +1,14 @@
+Sistem Pengadaan Barang dan Jasa
+	Login SSO
+		As FUNGSI PENGADAAN
+			Create New Pengadaan
+			View Vendor List
+			View Vendor Profile
+			Show Calon Vendor
+			Update Pengadaan
+			View Form Pengadaan
+				View Pengadaan list
+		As FUNGSI PENGGUNA
+			Fill Form Pengadaan
+			View Status pengadaan
+		

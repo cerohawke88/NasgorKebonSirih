@@ -84,7 +84,7 @@ $users = $db->runQuery("SELECT * FROM users WHERE username = '" . $_SESSION['use
 				<div id="popover_content_wrapper" class="js-sticky" style="display: none">
 					<span id="cart_details"></span>
 					<div align="right">
-						<a href="#" class="btn btn-primary" id="check_out_cart">
+						<a href="confirm-order.php" class="btn btn-primary" id="check_out_cart">
 							<span class="glyphicon glyphicon-shopping-cart"></span> Konfirmasi Pesanan
 						</a>
 						<a href="#" class="btn btn-default" id="clear_cart">

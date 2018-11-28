@@ -1,7 +1,5 @@
 <?php
 
-//fetch_cart.php
-
 session_start();
 
 $total_harga = 0;

@@ -19,7 +19,12 @@ class Config {
 	}
 	
 	function runQuery($query) {
-		$result = mysqli_query($this->conn,$query);
+		$result = mysqli_query($this->conn,$query) or die(mysqli_error($this->conn));
+
+		if (is_bool($result)) {
+			return;
+		}
+
 		while($row=mysqli_fetch_assoc($result)) {
 			$resultset[] = $row;
 		}		
