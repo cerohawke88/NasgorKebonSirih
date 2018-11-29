@@ -1,6 +1,7 @@
 <?php
 require_once('config.php');
 $db = new Config();
+$db->cekLogin();
 $menu = $db->runQuery("SELECT * FROM menu");
 ?>
 <!DOCTYPE html>
