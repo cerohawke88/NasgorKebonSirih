@@ -46,6 +46,7 @@ $users = $db->runQuery("SELECT * FROM users WHERE username = 'dzaky'");
 					<div class="fh5co-menu-2">
 						<a href="#" data-nav-section="events">Outlet</a>
 						<a href="#" data-nav-section="reservation">Order</a>
+						<a href="profile.php" onclick="window.location.href='profile.php'"> Profile</a>
 						<a href="logout.php" onclick="window.location.href='logout.php'"> Logout</a>
 					</div>
 				</div>
