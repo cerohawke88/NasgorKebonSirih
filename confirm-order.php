@@ -51,7 +51,7 @@ if(!empty($_SESSION["menu_cart"]))
     elseif(isset($_SESSION['failed'])):
 ?>
 
-<div class="alert alert-danger" role="alert"></div>
+<div class="alert alert-danger" role="alert"><?php echo $_SESSION['failed'] ?></div>
 
 <?php
     endif

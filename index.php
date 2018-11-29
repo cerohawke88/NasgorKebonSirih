@@ -7,6 +7,7 @@ $snack = $db->runQuery("SELECT * FROM menu WHERE jenis = 'Snack'");
 $alamat = $db->runQuery("SELECT * FROM alamat");
 ?>
 <?php include('partials/header.php'); ?>
+<title>Nasi Goreng Kebon Sirih</title>
 <body>
 	<div id="fh5co-container">
 		<div id="fh5co-home" class="js-fullheight" data-section="home">

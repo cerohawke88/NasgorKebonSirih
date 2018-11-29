@@ -1,4 +1,9 @@
-<?php include('server.php') ?>
+<?php 
+include('server.php');
+session_start();
+$_SESSION["username"] = $username;
+?>
+
 <!DOCTYPE html>
 <html>
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -10,7 +15,7 @@
 
   <head>
     <div class="header">
-    <title>Masuk - NGKKS</title>
+    <title>Login - Nasi Goreng Kebon Sirih</title>
       <p>
         <a href="index.php" style="float: right">
           <span class="glyphicon glyphicon-home"></span>
