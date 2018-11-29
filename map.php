@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<?php include('header.php'); ?>
+<?php include('partials/header.php'); ?>
 <head>
     <style>
         #map{
@@ -50,6 +50,6 @@
     </script>
 
     <script async defer src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDjcv4dEOOtHw0srW1XQrUAXAtQJCY2EME&callback=initMap"></script>
-<?php include('footer.php'); ?>
+<?php include('partials/footer.php'); ?>
 </body>
 </html>

@@ -5,21 +5,24 @@
 		</figure>
 		<div>
 			<h3><?php echo $item['nama'] ?></h3>
-			<p><?php echo $item['nama'] ?></p>
+			<p><?php echo $item['deskripsi'] ?></p>
 		</div>
 	</div>
 	<div class="fh5co-food-pricing">
 		Rp.<?php echo $item['harga'] ?>
 	</div>
-	<form class="form-inline" method="post" action="cart.php" style="border: none; margin-right: -60px;">
+	<?php
+	// $qty = isset($_SESSION['menu_cart']) ? ($_SESSION['menu_cart'][$item['id']] ?? 0) : 0;
+	?>
+	<form class="form-inline" style="border: none; margin-right: -60px;">
 		<div class="form-group">
-			<input type="number" name="quantity" min="1">
+			<input type="number" name="jumlah" id="jumlah<?php echo $item['id'] ?>" min="1">
 		</div>
 		
 		<div class="form-group">
-			<input type="hidden" value="<?php echo $item['id'] ?>" name="menu_id">
-			<input type="hidden" value="add_to_cart" name="add_to_cart">
-			<button type="submit" class="btnPesan">Pesan</button>
+			<input type="hidden" name="hidden_name" id="nama<?php echo $item["id"] ?>" value="<?php echo $item["nama"] ?>" />
+			<input type="hidden" name="hidden_price" id="harga<?php echo $item["id"] ?>" value="<?php echo $item["harga"] ?>" />
+			<input type="button" class="btnPesan add_to_cart" value="Pesan" name="add_to_cart" id="<?php echo $item['id'] ?>" />
 		</div>
 	</form>
 </li>

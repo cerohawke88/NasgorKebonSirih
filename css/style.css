@@ -5,7 +5,13 @@
   font-weight: normal;
   font-style: normal;
 }
-
+.lingkaran {
+    width:100px;
+    height:100px;
+    background-color:#f00;
+    border-radius:50%;
+    overflow:hidden;
+}
 body {
   font-family: "Merriweather", serif;
   font-size: 18px;
@@ -46,6 +52,73 @@ a:hover, a:focus, a:active {
   border-radius: 10px 10px 0px 0px;
   padding: 20px;
 }
+
+/*pop over cart*/
+.popover {
+    width: 100%;
+    max-width: 800px;
+}
+
+/*dropdown profile*/
+/*.navbar {
+    overflow: hidden;
+    background-color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}*/
+
+/*.dropdown .dropbtn {
+    cursor: pointer;
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}*/
+
+.navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+    color: #fb6e14;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+
 form, .content {
   width: 30%;
   margin: 0px auto;
@@ -54,7 +127,7 @@ form, .content {
   background: white;
   border-radius: 0px 0px 10px 10px;
 }
-/*login dan register*/
+login dan register
 .input-group {
   margin: 10px 0px 10px 0px;
 }
@@ -98,7 +171,7 @@ form, .content {
   border: 1px solid #3c763d;
   margin-bottom: 20px;
 }
-/*END Login dan Regis */
+END Login dan Regis 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Playfair Display", serif;
   color: #000;
@@ -264,9 +337,9 @@ p {
   border-color: #fb6e14;
 }
 
-/*
+
  * Flexslider
- */
+ 
 #fh5co-home {
   min-height: 700px;
   background: #fff url(../images/loader.gif) no-repeat center center;
@@ -1107,7 +1180,6 @@ input[type=number]{
     padding: 5em 0;
   }
 }
-/*guna apa*/
 #fh5co-contact .fh5co-heading .heading {
   position: relative;
   padding-top: 30px !important;
@@ -1454,4 +1526,4 @@ input[type=number]{
   padding-bottom: 40px;
 }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style.css.map 

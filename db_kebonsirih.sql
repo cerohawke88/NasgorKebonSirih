@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.1
+-- version 4.7.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 07, 2018 at 08:07 AM
--- Server version: 10.1.33-MariaDB
--- PHP Version: 7.2.6
+-- Generation Time: Nov 28, 2018 at 10:34 AM
+-- Server version: 10.1.26-MariaDB
+-- PHP Version: 7.1.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -70,15 +70,15 @@ CREATE TABLE `menu` (
 --
 
 INSERT INTO `menu` (`id`, `jenis`, `nama`, `gambar`, `deskripsi`, `harga`) VALUES
-(1, 'Makanan', 'Nasi Goreng Kambing', 'images/menu4.jpg', 'Nasi Goreng yang penuh dengan rempah-rempah dan banyaknya Daging Kambing dengan rasa empuk dan tidak bau menimbulkan rasa lezat di mulut!', 41000),
-(2, 'Makanan', 'Nasi Goreng Kambing 1/2 Porsi', 'images/menu4.jpg', 'Nasi Goreng yang penuh dengan rempah-rempah dan banyaknya Daging Kambing dengan rasa empuk dan tidak bau menimbulkan rasa lezat di mulut! Cocok untuk kalian yang gak pengen terlalu kenyang', 31000),
-(3, 'Makanan', 'Nasi Goreng Ayam', 'images/menu6.jpg', 'Nasi Goreng yang penuh dengan rempah-rempah dan banyaknya Daging Ayam dan menimbulkan rasa lezat di mulut!', 41000),
-(4, 'Makanan', 'Nasi Goreng Ayam 1/2 Porsi', 'images/menu6.jpg', 'Nasi Goreng yang penuh dengan rempah-rempah dan banyaknya Daging Ayam dan menimbulkan rasa lezat di mulut! Pengen makan enak tapi gak pengen kekenyangan? Bisa!', 31000),
-(5, 'Makanan', 'Nasi Goreng Sosis Bakso', 'images/menu12.jpg', 'Nasi Goreng yang penuh dengan rempah-rempah dan banyaknya sosis dan bakso yang menimbulkan rasa lezat di mulut!', 41000),
-(6, 'Makanan', 'Nasi Goreng Sosis Bakso 1/2 Porsi', 'images/menu12.jpg', 'Nasi Goreng yang penuh dengan rempah-rempah dan banyaknya sosis dan bakso yang menimbulkan rasa lezat di mulut! Kini hadir dalam porsi 1/2', 31000),
+(1, 'Makanan', 'Nasi Goreng Kambing', 'images/menuu.jpg', 'Nasi Goreng dengan daging kambing yang empuk dan kaya akan rempah. Lezat banget!', 41000),
+(2, 'Makanan', 'Nasi Goreng Kambing 1/2 Porsi', 'images/menuu.jpg', 'Nasi Goreng dengan daging kambing yang empuk dan kaya akan rempah. Lezat banget! Cocok untuk kalian yang gak pengen terlalu kenyang', 31000),
+(3, 'Makanan', 'Nasi Goreng Ayam', 'images/menu6.jpg', 'Nasi Goreng dengan daging ayam pilihan yang empuk dan kaya akan rempah. Top markotop!', 41000),
+(4, 'Makanan', 'Nasi Goreng Ayam 1/2 Porsi', 'images/menu6.jpg', 'Nasi Goreng dengan daging ayam pilihan yang empuk dan kaya akan rempah. Top markotop! Pengen makan enak tapi gak pengen kekenyangan? Bisa!', 31000),
+(5, 'Makanan', 'Nasi Goreng Sosis Bakso', 'images/menu12.jpg', 'Nasi Goreng dengan tambahan sosis dan bakso dan kaya akan rempah. Dijamin puas!', 41000),
+(6, 'Makanan', 'Nasi Goreng Sosis Bakso 1/2 Porsi', 'images/menu12.jpg', 'Nasi Goreng dengan tambahan sosis dan bakso dan kaya akan rempah. Dijamin puas! Kini hadir dalam porsi 1/2', 31000),
 (7, 'Makanan', 'Nasi Goreng Polos', 'images/menu6.jpg', 'Nasi Goreng yang penuh dengan rempah-rempah dan menimbulkan rasa lezat di mulut!', 27000),
 (8, 'Makanan', 'Nasi Goreng Polos 1/2 Porsi', 'images/menu6.jpg', 'Nasi Goreng yang penuh dengan rempah-rempah dan menimbulkan rasa lezat di mulut! 1/2 porsi oke juga!', 22000),
-(9, 'Makanan', 'Nasi Goreng Jumbo', 'images/menu4.jpg', 'Porsi besar lebih puas! Rasa tetap ganas!', 67000),
+(9, 'Makanan', 'Nasi Goreng Jumbo', 'images/menuu7.jpg', 'Porsi besar lebih puas! Rasa tetap ganas!', 67000),
 (10, 'Makanan', 'Nasi Ala Kambing Guling', 'images/menu14.jpg', 'Sensasi Kambing yang empuk dan tidak bau ditambah dengan hangatnya nasi putih yang membuat sensasi rasa enak di mulut.', 50000),
 (11, 'Minuman', 'Aneka Juice', 'images/drink1.jpg', 'Manisnya rasa buah membuat hati jadi senang.', 15000),
 (12, 'Minuman', 'Mix Juice', 'images/drink2.jpg', 'Percampuran aneka buah membuat rasa baru di mulut.', 18000),
@@ -86,13 +86,13 @@ INSERT INTO `menu` (`id`, `jenis`, `nama`, `gambar`, `deskripsi`, `harga`) VALUE
 (14, 'Minuman', 'Es Jeruk/Panas', 'images/drink4.jpg', 'Asem manis seger di mulut.', 10000),
 (15, 'Minuman', 'Es Lemon Tea', 'images/drink5.jpg', 'Asem seger di mulut.', 8000),
 (16, 'Minuman', 'Es Teh Manis/Panas', 'images/drink6.jpg', 'Manis segerr di mulut.', 5000),
-(17, 'Minuman', 'Es Teh Tawar', 'images/res_img_5.jpg', 'Bagi yang gak suka manis nih minumannye.', 4000),
-(18, 'Minuman', 'Teh Tawar Hangat', 'images/res_img_6.jpg', 'Bagi yang gak suka manis dan pingin yang anget-anget nih minumannye.', 2000),
-(19, 'Minuman', 'Soda Susu', 'images/res_img_7.jpg', 'Soda nya bikin enak di dada. Rasakan sensasinye!', 15000),
-(20, 'Minuman', 'Soda Gembira', 'images/res_img_5.jpg', 'Soda nya dijamin bikin gembira deh!', 15000),
-(21, 'Minuman', 'Aneka Soft Drink', '', 'Bisa pilih Coca Cola, Fanta, atau Sprite. Segar pastinya!', 6000),
-(22, 'Minuman', 'Kopi Hitam', 'images/res_img_5.jpg', 'Kopi hitam pilihan, pas banget nih buat yang demen ngopi.', 5000),
-(23, 'Minuman', 'Air Mineral', 'images/res_img_5.jpg', 'Buat yang demen bening-bening.', 5000),
+(17, 'Minuman', 'Es Teh Tawar', 'images/drink12.jpg', 'Bagi yang gak suka manis nih minumannye.', 4000),
+(18, 'Minuman', 'Teh Tawar Hangat', 'images/drink11.jpg', 'Bagi yang gak suka manis dan pingin yang anget-anget nih minumannye.', 2000),
+(19, 'Minuman', 'Soda Susu', 'images/drink9.jpg', 'Soda nya bikin enak di dada. Rasakan sensasinye!', 15000),
+(20, 'Minuman', 'Soda Gembira', 'images/drink10.jpg', 'Soda nya dijamin bikin gembira deh!', 15000),
+(21, 'Minuman', 'Aneka Soft Drink', 'images/drink13.jpg', 'Bisa pilih Coca Cola, Fanta, atau Sprite. Segar pastinya!', 6000),
+(22, 'Minuman', 'Kopi Hitam', 'images/drink8.jpg', 'Kopi hitam pilihan, pas banget nih buat yang demen ngopi.', 5000),
+(23, 'Minuman', 'Air Mineral', 'images/drink7.jpg', 'Buat yang demen bening-bening.', 5000),
 (24, 'Snack', 'Kerupuk Kampung', 'images/snack3.jpg', 'Kriuk-kriuk sedaaap!!!', 2000),
 (25, 'Snack', 'Kerupuk Bangka', 'images/snack1.jpg', 'Rasa Ikan Tenggiri, Gurih dan renyah!', 7000),
 (26, 'Snack', 'Emping', 'images/snack2.jpg', 'Melinjo asli, super renyah', 15000),
@@ -108,6 +108,35 @@ INSERT INTO `menu` (`id`, `jenis`, `nama`, `gambar`, `deskripsi`, `harga`) VALUE
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL,
+  `username` varchar(191) NOT NULL,
+  `total_harga` int(11) NOT NULL,
+  `catatan` varchar(255) NOT NULL,
+  `waktu_ambil` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orders_detail`
+--
+
+CREATE TABLE `orders_detail` (
+  `id_order` int(11) NOT NULL,
+  `username` varchar(191) NOT NULL,
+  `id_menu` int(10) NOT NULL,
+  `nama` varchar(191) NOT NULL,
+  `harga` int(11) NOT NULL,
+  `jumlah` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -117,6 +146,7 @@ CREATE TABLE `users` (
   `email` varchar(191) NOT NULL,
   `password` varchar(191) NOT NULL,
   `saldo` int(11) UNSIGNED DEFAULT '30000',
+  `level` int(11) NOT NULL,
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -124,25 +154,37 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `email`, `password`, `saldo`, `created_at`) VALUES
-(1, 'Test', 'test@test.com', 'a8f5f167f44f4964e6c998dee827110c', 30000, '2018-10-29 08:48:32'),
-(2, 'dzaky', 'dzaky@gmail.com', 'b02dd1f9ddf82871026edd1786c47ed3', 30000, '2018-11-07 14:04:57');
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `saldo`, `level`, `created_at`) VALUES
+(1, 'Test', 'test@test.com', 'a8f5f167f44f4964e6c998dee827110c', 30000, 0, '2018-10-29 08:48:32'),
+(2, 'Guest', 'guest@guest.com', 'efe6398127928f1b2e9ef3207fb82663', 30000, 0, '2018-11-06 16:56:30'),
+(3, 'Vicky', 'vickysultan08@gmail.com', 'a8f5f167f44f4964e6c998dee827110c', 30000, 0, '2018-11-19 16:33:13'),
+(4, 'dzaky', 'dzaky@gmail.com', 'a8f5f167f44f4964e6c998dee827110c', 30000, 0, '2018-11-23 13:54:19'),
+(5, 'Haha', 'haha@gaga.com', '4e4d6c332b6fe62a63afe56171fd3725', 30000, 0, '2018-11-25 14:34:54'),
+(6, 'admin', 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 30000, 1, '2018-11-25 14:59:22');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `alamat`
---
-ALTER TABLE `alamat`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `menu`
 --
 ALTER TABLE `menu`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `username` (`username`);
+
+--
+-- Indexes for table `orders_detail`
+--
+ALTER TABLE `orders_detail`
+  ADD UNIQUE KEY `UNIQUE` (`id_order`),
+  ADD KEY `username` (`username`);
 
 --
 -- Indexes for table `users`
@@ -156,22 +198,36 @@ ALTER TABLE `users`
 --
 
 --
--- AUTO_INCREMENT for table `alamat`
---
-ALTER TABLE `alamat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
-
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `orders`
+--
+ALTER TABLE `orders`
+  ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`username`) REFERENCES `users` (`username`);
+
+--
+-- Constraints for table `orders_detail`
+--
+ALTER TABLE `orders_detail`
+  ADD CONSTRAINT `orders_detail_ibfk_1` FOREIGN KEY (`username`) REFERENCES `users` (`username`),
+  ADD CONSTRAINT `orders_detail_ibfk_2` FOREIGN KEY (`id_order`) REFERENCES `orders` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
