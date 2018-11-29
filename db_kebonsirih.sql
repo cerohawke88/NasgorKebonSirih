@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 28, 2018 at 10:34 AM
+-- Generation Time: Nov 29, 2018 at 10:40 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -157,8 +157,8 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `saldo`, `level`, `created_at`) VALUES
 (1, 'Test', 'test@test.com', 'a8f5f167f44f4964e6c998dee827110c', 30000, 0, '2018-10-29 08:48:32'),
 (2, 'Guest', 'guest@guest.com', 'efe6398127928f1b2e9ef3207fb82663', 30000, 0, '2018-11-06 16:56:30'),
-(3, 'Vicky', 'vickysultan08@gmail.com', 'a8f5f167f44f4964e6c998dee827110c', 30000, 0, '2018-11-19 16:33:13'),
-(4, 'dzaky', 'dzaky@gmail.com', 'a8f5f167f44f4964e6c998dee827110c', 30000, 0, '2018-11-23 13:54:19'),
+(3, 'Vicky', 'vickysultan08@gmail.com', 'a8f5f167f44f4964e6c998dee827110c', 20000, 0, '2018-11-19 16:33:13'),
+(4, 'dzaky', 'dzaky@gmail.com', 'a8f5f167f44f4964e6c998dee827110c', 0, 0, '2018-11-23 13:54:19'),
 (5, 'Haha', 'haha@gaga.com', '4e4d6c332b6fe62a63afe56171fd3725', 30000, 0, '2018-11-25 14:34:54'),
 (6, 'admin', 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 30000, 1, '2018-11-25 14:59:22');
 
@@ -183,8 +183,8 @@ ALTER TABLE `orders`
 -- Indexes for table `orders_detail`
 --
 ALTER TABLE `orders_detail`
-  ADD UNIQUE KEY `UNIQUE` (`id_order`),
-  ADD KEY `username` (`username`);
+  ADD KEY `username` (`username`),
+  ADD KEY `INDEX` (`id_order`) USING BTREE;
 
 --
 -- Indexes for table `users`
