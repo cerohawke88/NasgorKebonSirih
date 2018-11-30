@@ -81,19 +81,9 @@ if (isset($_POST['login_user'])) {
     if ($logged_in_user['level'] == '1') {
         session_start();
         $_SESSION['username'] = $logged_in_user['username'];
+        $_SESSION['level']    = $logged_in_user['level'];
         header('location: tables.php');     
     consolelog($results);
-      }else{
-        $_SESSION['username'] = $logged_in_user['username'];
-
-        header('location: home.php');
-      }
-    }else {
-      array_push($errors, "Wrong username/password combination");
-        // $data['level'] level digunaan untu memanggil value level dari username yang telah login dan disimpan dalam $_SESSION['level']
-        $_SESSION['level']    = $logged_in_user['level'];
-        header('location:tables.php');
- 
     }elseif($logged_in_user['level'] == '0'){
         session_start();
         $_SESSION['username'] = $logged_in_user['username'];

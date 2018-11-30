@@ -29,8 +29,16 @@
 
             <div class="col-md-3">
                 <ul class="nav nav-pills nav-stacked admin-menu" >
+                    <li></li>
                     <li class="active"><a href="" data-target-id="profile"><i class="glyphicon glyphicon-user"></i> Profile</a></li>
-                    <li><a href="" data-target-id="edit"><i class="glyphicon glyphicon-cog"></i> Edit</a></li>
+                    <br>
+                    <li>
+                        <div class="text-center">
+                            <img src="images/profilePicture.png" class="avatar img-circle" alt="avatar">
+                        </div>
+                    </li>
+                    <br>
+                    <li><a href="editprofile.php" data-target-id="edit"><i class="glyphicon glyphicon-cog"></i> Edit</a></li>
                     <li><a href="home.php" data-target-id="home"><i class="glyphicon glyphicon-cog"></i> Home</a></li>
                     <li><a href="#myModal" data-toggle="modal" data-target-id="#myModal"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
                 </ul>
