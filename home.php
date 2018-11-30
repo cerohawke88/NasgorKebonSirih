@@ -45,7 +45,6 @@ $users = $db->runQuery("SELECT * FROM users WHERE username = ' ". $_SESSION["use
 					<div class="fh5co-menu-2">
 						<a href="#" data-nav-section="events">Outlet</a>
 
-						<a href="#" data-nav-section="reservation">Order</a>
 
 						<a href="#" data-toggle="dropdown" onclick="myFunction()">
 							<?php 
@@ -60,7 +59,6 @@ $users = $db->runQuery("SELECT * FROM users WHERE username = ' ". $_SESSION["use
 							    <li><a href="logout.php" onclick="window.location.href='logout.php'">Logout</a></li>
 							</ul>
 						</div>
-						<!-- <a href="logout.php" onclick="window.location.href='logout.php'"> Logout</a> -->
 					</div>
 						</div>
 					<div id="navbar-cart" class="navbar-collapse collapse">
@@ -89,7 +87,7 @@ $users = $db->runQuery("SELECT * FROM users WHERE username = ' ". $_SESSION["use
 				<div id="popover_content_wrapper" class="js-sticky" style="display: none">
 					<span id="cart_details"></span>
 					<div align="right">
-						<a href="confirm-order.php" class="btn btn-primary" id="check_out_cart">
+						<a href="confirm-order.php" target="_blank" class="btn btn-primary" id="check_out_cart">
 							<span class="glyphicon glyphicon-shopping-cart"></span> Konfirmasi Pesanan
 						</a>
 						<a href="#" class="btn btn-default" id="clear_cart">

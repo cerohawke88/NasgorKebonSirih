@@ -55,7 +55,6 @@ if (isset($_POST['reg_user'])) {
   			  VALUES('$username', '$email', '$password')";
   	mysqli_query($db, $query);
   	$_SESSION['username'] = $username;
-  	$_SESSION['success'] = "You are now logged in";
   	header('location: home.php');
   }
 }
@@ -81,12 +80,10 @@ if (isset($_POST['login_user'])) {
       if ($logged_in_user['level'] == '1') {
 
         $_SESSION['username'] = $logged_in_user['username'];
-        $_SESSION['success']  = "You are now logged in";
         header('location: tables.php');     
     consolelog($results);
       }else{
         $_SESSION['username'] = $logged_in_user['username'];
-        $_SESSION['success']  = "You are now logged in";
 
         header('location: home.php');
       }

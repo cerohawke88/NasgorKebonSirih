@@ -15,8 +15,7 @@ $db = new Config();
 
 	$username = $_SESSION['username'];
     $waktu = $_GET['waktu-ambil'];
-    $waktusql = date("d/m/y g:i A",strtotime($waktu));
-    $waktustr = date("d/m/y g:i A", strtotime($waktu));
+    $waktu_ambil = date("d/m/y H:i",strtotime($waktu));
     $notes = $_GET['notes'];
  	$saldo = $db->runQuery("SELECT saldo FROM users WHERE username = '$username'");
  	
@@ -26,7 +25,7 @@ $db = new Config();
  	if ($saldo[0]['saldo'] >= $total_harga) {
 
 	 	$db->runQuery("INSERT INTO orders (username, total_harga, catatan, waktu_ambil) 
-	 		VALUES ('$username', '$total_harga', '$notes', '$waktu')");
+	 		VALUES ('$username', '$total_harga', '$notes', '$waktu_ambil')");
 
 	 	$orderBaru = $db->runQuery("SELECT id FROM orders WHERE username = '$username' ORDER BY waktu_ambil DESC LIMIT 1");
 
@@ -47,7 +46,7 @@ $db = new Config();
 		 }
 	 	
 	 	// $saldo - $total_harga;
- 		$_SESSION['success'] = 'Transaksi sukses! Silakan ambil pesanan anda pada ' . $waktustr . '.';
+ 		$_SESSION['success'] = '<strong> Transaksi sukses! </strong> Silakan cek <a href="invoice.php" target="_blank">Invoice</a> anda.';
 
  		header('location: confirm-order.php');
  	} else {
