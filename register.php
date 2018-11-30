@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
   </div>
 </head>
+<title>Profile</title>
 <body class="login-body">
   <form method="post" action="register.php">
   	<?php include('errors.php'); ?>

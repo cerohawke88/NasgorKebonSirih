@@ -133,9 +133,8 @@
                                         </div>
                                         <div class="panel-body">
                                             Do you really want to logout ?  
-                                            <a  href="login.php" class="label label-danger"
-                                                onclick="event.preventDefault();
-                                                                         document.getElementById('logout-form').submit();">
+                                            <a  href="logout.php" class="label label-danger"
+                                                onclick="window.location.href='logout.php'">
                                                 <span >   Yes   </span>
                                             </a>    
                                             <a href="" class="label label-success"> <span >  No   </span></a>
