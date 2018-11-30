@@ -3,7 +3,7 @@ session_start();
 require_once('config.php');
 $db = new Config();
 $db->cekLogin();
-$menu = $db->runQuery("SELECT * FROM menu");
+$users = $db->runQuery("SELECT * FROM users");
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +16,6 @@ $menu = $db->runQuery("SELECT * FROM menu");
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
    ADMIN
-
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
@@ -45,13 +44,13 @@ $menu = $db->runQuery("SELECT * FROM menu");
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item active ">
+          <li class="nav-item">
             <a class="nav-link" href="./tables.php">
               <i class="material-icons">content_paste</i>
               <p>Table Makanan</p>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item active ">
             <a class="nav-link" href="./user.php">
               <i class="material-icons">content_paste</i>
               <p>Table User</p>
@@ -70,17 +69,8 @@ $menu = $db->runQuery("SELECT * FROM menu");
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand-lg" href="tables.php"><b>Table List</b></a>
+            <a class="navbar-brand-lg" href="user.php"><b>Table User</b></a>
           </div>
-          <div class="collapse navbar-collapse justify-content-end">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="btn btn-success btn-sm" href="add.php" >
-                  <i class="lingkaran">Tambah</i>
-                </a>
-                <div class="menu menu-right" aria-labelledby="navbarMenuLink">
-                </div>
-              </li>
           <div class="collapse navbar-collapse justify-content-end">
             <ul class="navbar-nav">
               <li class="nav-item dropdown">
@@ -124,8 +114,8 @@ $menu = $db->runQuery("SELECT * FROM menu");
             <div class="col-md-12">
               <div class="card card-plain">
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title mt-0">Menu</h4>
-                  <p class="card-category">Mengganti atau menambahkan menu</p>
+                  <h4 class="card-title mt-0">List User</h4>
+                  <p class="card-category">Menambahkan Saldo</p>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
@@ -136,42 +126,36 @@ $menu = $db->runQuery("SELECT * FROM menu");
                           ID
                         </th>
                         <th>
-                          Nama Makanan
+                          Nama User
                         </th>
                         <th>
-                          Deskripsi
+                          Email
                         </th>
                         <th>
-                          Harga
+                          Saldo
                         </th>
                         <th>
                           update
-                        </th>
-                        <th>
-                          delete
-                        </th>
+                        </th>                      
                       </thead>
                       <tbody>
-                        <?php foreach ($menu as $row) {
+                        <?php foreach ($users as $row) {
                           ?>
                        <tr>
                         <td>
                           <?php echo $row['id'];?>
                         </td>
                         <td>
-                          <?php echo $row['nama'];?>
+                          <?php echo $row['username'];?>
                         </td>
                         <td>
-                          <?php echo $row['deskripsi'];?>
+                          <?php echo $row['email'];?>
                         </td>
                         <td>
-                          <?php echo $row['harga'];?>
+                          <?php echo $row['saldo'];?>
                         </td>
                         <td>
-                          <a class="btn btn-primary on-click" href="update.php?id=<?php echo $row['id']?>">update</a>
-                        </td>
-                        <td>
-                          <a class="btn btn-danger on-click right" onclick="return confirm('Ingin menghapus?')" href="delete.php?id=<?php echo $row['id']?>">delete</a>
+                          <a class="btn btn-primary on-click" href="updatesaldo.php?id=<?php echo $row['id']?>">update</a>
                         </td>
                       </tr>
                         <?php }
