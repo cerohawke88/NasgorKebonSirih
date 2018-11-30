@@ -38,9 +38,8 @@
                         </div>
                     </li>
                     <br>
-                    <li><a href="editprofile.php" data-target-id="edit"><i class="glyphicon glyphicon-cog"></i> Edit</a></li>
-                    <li><a href="home.php" data-target-id="home"><i class="glyphicon glyphicon-cog"></i> Home</a></li>
-                    <li><a href="#myModal" data-toggle="modal" data-target-id="#myModal"><i class="glyphicon glyphicon-log-out"></i> Logout</a></li>
+                    <li><a href="home.php" data-target-id="home"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+                    <li><a href="logout.php" data-target-id="logout"><i class="glyphicon glyphicon-log-out"></i>Logout</a></li>
                 </ul>
             </div>
 
@@ -80,55 +79,6 @@
                 </div>
 
             </div>
-
-            <div class="col-md-9  admin-content" id="change-password">
-                <form action="/password" method="post">
-
-           
-                    <div class="panel panel-info" style="margin: 1em;">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><label for="new_password" class="control-label panel-title">New Password</label></h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="form-group">
-                                <div class="col-sm-10">
-                                    <input type="password" class="form-control" name="password" id="new_password" >
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-             
-                    <div class="panel panel-info" style="margin: 1em;">
-                        <div class="panel-heading">
-                            <h3 class="panel-title"><label for="confirm_password" class="control-label panel-title">Confirm password</label></h3>
-                        </div>
-                        <div class="panel-body">
-                            <div class="form-group">
-                                <div class="col-sm-10">
-                                    <input type="password" class="form-control" name="password_confirmation" id="confirm_password" >
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-           
-                    <div class="panel panel-info border" style="margin: 1em;">
-                        <div class="panel-body">
-                            <div class="form-group">
-                                <div class="pull-left">
-                                    <input type="submit" class="form-control btn btn-primary" name="submit" id="submit">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </form>
-            </div>
-
-        </div>
-
         <!-- Modal -->
                     <div class="modal fade" id="myModal" role="dialog">
                         <div class="modal-dialog">
