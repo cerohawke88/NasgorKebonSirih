@@ -17,9 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   	echo "<font color='green'>Data added successfully.";
 	header("location:tables.php");
   	exit;
-
 }
-
 ?>
 <html>
 <body>

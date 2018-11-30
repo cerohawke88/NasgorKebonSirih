@@ -45,8 +45,6 @@ $users = $db->runQuery("SELECT * FROM users WHERE username = ' ". $_SESSION["use
 					<div class="fh5co-menu-2">
 						<a href="#" data-nav-section="events">Outlet</a>
 
-						<a href="#" data-nav-section="reservation">Order</a>
-
 						<a href="#" data-toggle="dropdown" onclick="myFunction()">
 							<?php 
 								 echo $_SESSION['username'];

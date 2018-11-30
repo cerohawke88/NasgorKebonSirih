@@ -2,7 +2,7 @@
 
 session_start();
 
-$_SESSION['session_email'] = '';
+$_SESSION['username'] = '';
 session_destroy();
 header("location:login.php?logout=success");
 
