@@ -34,7 +34,6 @@ $orders = $db->runQuery("SELECT * FROM orders WHERE id='$id'");
               <div class="card card-plain">
                 <div class="card-header card-header-primary">
                   <h4 class="card-title mt-0">Order Detail</h4>
-                  <p class="card-category">Melihat Order</p>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
@@ -42,23 +41,24 @@ $orders = $db->runQuery("SELECT * FROM orders WHERE id='$id'");
                       <tr>
                       <thead class="">
                         <th>
-                          ID
+                          <strong>ID Order</strong> 
                         </th>
                         <th>
-                          Nama User
+                          <strong>Nama User</strong> 
                         </th>
                         <th>
-                          Nama Makanan
+                          <strong>Nama Makanan</strong> 
                         </th>
                         <th>
-                          Harga
+                          <strong>Harga</strong> 
                         </th>
                         <th>
-                          Jumlah
+                          <strong>Jumlah</strong> 
                         </th>
                       </thead>
                       <tbody>
                         <?php foreach ($orders_detail as $row) {
+                          $harga = number_format($row['harga'], 0,',','.');
                           ?>
                        <tr>
                         <td>
@@ -71,7 +71,7 @@ $orders = $db->runQuery("SELECT * FROM orders WHERE id='$id'");
                           <?php echo $row['nama'];?>
                         </td>
                         <td>
-                          <?php echo $row['harga'];?>
+                          <?php echo 'Rp ' . $harga; ?>
                         </td>
                         <td>
                           <?php echo $row['jumlah'];?>

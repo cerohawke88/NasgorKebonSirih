@@ -2,7 +2,8 @@
 <?php
 
 session_start();
-include 'partials/header.php';
+require_once('libraries/helpers.php');
+render('header', array('title' => 'Invoice'));
 include 'config.php';
 $db = new Config();
 

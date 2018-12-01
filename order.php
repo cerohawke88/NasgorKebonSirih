@@ -39,24 +39,23 @@ $orders = $db->runQuery("SELECT * FROM orders");
       </div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item ">
+          <li class="nav-item">
             <a class="nav-link" href="tables.php">
               <i class="material-icons">content_paste</i>
-              <p>Table List</p>
+              <p>List Menu</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item">
             <a class="nav-link" href="user.php">
-              <i class="material-icons">content_paste</i>
-              <p>Table User</p>
+              <i class="material-icons">account_circle</i>
+              <p>List User</p>
             </a>
           </li>
           <li class="nav-item active ">
             <a class="nav-link" href="order.php">
               <i class="material-icons">shopping_cart</i>
-              <p>Orders</p>
+              <p>orders</p>
             </a>
-          </li>
         </ul>
       </div>
     </div>
@@ -64,9 +63,6 @@ $orders = $db->runQuery("SELECT * FROM orders");
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
-          <div class="navbar-wrapper">
-            <a class="navbar-brand-lg" href="#pablo"><b>Orders</b></a>
-          </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
             <span class="navbar-toggler-icon icon-bar"></span>
@@ -95,9 +91,38 @@ $orders = $db->runQuery("SELECT * FROM orders");
       <p><img src="images/time.png" alt=""> : <span id="datetime"></span></p>
 
         <script>
-        var dt = new Date();
-        document.getElementById("datetime").innerHTML = (("0"+dt.getDate()).slice(-2)) +"/"+ (("0"+(dt.getMonth()+1)).slice(-2)) +"/"+ (dt.getFullYear()) +" "+ (("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2));
-        </script>
+            function date_time(id)
+            {
+            date = new Date;
+            year = date.getFullYear();
+            month = date.getMonth();
+            months = new Array('Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember');
+            d = date.getDate();
+            day = date.getDay();
+            days = new Array('Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu');
+            h = date.getHours();
+            if(h<10)
+            {
+            h = "0"+h;
+            }
+            m = date.getMinutes();
+            if(m<10)
+            {
+            m = "0"+m;
+            }
+            s = date.getSeconds();
+            if(s<10)
+            {
+            s = "0"+s;
+            }
+            result = ''+days[day]+' '+months[month]+' '+d+' '+year+' '+h+':'+m+':'+s;
+            document.getElementById(id).innerHTML = result;
+            setTimeout('date_time("'+id+'");','1000');
+            return true;
+            }
+            </script>
+            <span id="date_time"></span>
+            <script type="text/javascript">window.onload = date_time('date_time');</script>
       <!-- End Time and Date -->
       <div class="content">
         <div class="container-fluid">
@@ -106,7 +131,6 @@ $orders = $db->runQuery("SELECT * FROM orders");
               <div class="card card-plain">
                 <div class="card-header card-header-primary">
                   <h4 class="card-title mt-0">List Order</h4>
-                  <p class="card-category">Melihat Order</p>
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
@@ -114,17 +138,28 @@ $orders = $db->runQuery("SELECT * FROM orders");
                       <tr>
                       <thead class="">
                         <th>
-                          ID
+                         <strong>ID</strong> 
                         </th>
                         <th>
-                          Nama User
+                         <strong>Nama User</strong> 
                         </th>
                         <th>
-                          Detail
-                        </th>                      
+                         <strong>Total Harga</strong> 
+                        </th> 
+                        <th>
+                          <strong>Catatan</strong>
+                        </th> 
+                        <th>
+                         <strong>Waktu Ambil</strong> 
+                        </th> 
+                        <th>
+                         <strong>Detail</strong> 
+                        </th>
                       </thead>
                       <tbody>
-                        <?php foreach ($orders as $row) {
+                        <?php 
+                        foreach ($orders as $row) {
+                          $total_harga = number_format($row['total_harga'], 0,',','.');
                           ?>
                        <tr>
                         <td>
@@ -134,7 +169,16 @@ $orders = $db->runQuery("SELECT * FROM orders");
                           <?php echo $row['username'];?>
                         </td>
                         <td>
-                          <button><a href="details.php?id=<?php echo $row['id'];?>">details</a></button>
+                          <?php echo 'Rp ' . $total_harga; ?>
+                        </td>
+                        <td>
+                          <?php echo $row['catatan'];?>
+                        </td>
+                        <td>
+                          <?php echo $row['waktu_ambil'];?>
+                        </td>
+                        <td>
+                          <button><a href="details.php?id=<?php echo $row['id'];?>">Details</a></button>
                         </td>
                       </tr>
                         <?php }

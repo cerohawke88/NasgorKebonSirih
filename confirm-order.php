@@ -11,8 +11,8 @@ if (isset($_SESSION['menu_cart'])):
 ?>
 
 <div class="row">
-    <a href="home.php" class="col-sm-6 col-sm-offset-3" style="display: flex; padding-top: 40px">Back to Home</a>
-    <div class="col-sm-6 col-sm-offset-3" style="display: flex; align-items: center; height: 60vh">
+    <a href="home.php" class="col-sm-6 col-sm-offset-3" style="display: flex; padding-top: 70px; color: black ">Back to Home</a>
+    <div class="col-sm-6 col-sm-offset-3" style="display: flex; align-items: center; height: 65vh">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h3 class="panel-title"><strong>Rekap Pesanan <?php echo $_SESSION['username']; ?></strong></h3>

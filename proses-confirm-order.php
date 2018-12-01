@@ -28,13 +28,13 @@ $db = new Config();
 	 		VALUES ('$username', '$total_harga', '$notes', '$waktu_ambil')");
 
 	 	$orderBaru = $db->runQuery("SELECT id FROM orders WHERE username = '$username' ORDER BY waktu_ambil DESC LIMIT 1");
+	 	$id_order = reset($orderBaru)['id'];
 
 	 	$minSaldo = 0;
 	 	$minSaldo = $saldo[0]['saldo'] - $total_harga;
 
 	 	$db->runQuery("UPDATE users  SET saldo = '$minSaldo' WHERE username = '$username' ");
 
-	 	$id_order = reset($orderBaru)['id'];
 
 	 	foreach($_SESSION["menu_cart"] as $keys => $values) {
 		    $menu = $values['nama'];
@@ -45,7 +45,6 @@ $db = new Config();
 	 		VALUES ('$id_order', '$username', '$id_menu', '$menu', '$harga', '$jumlah')");
 		 }
 	 	
-	 	// $saldo - $total_harga;
  		$_SESSION['success'] = '<strong> Transaksi sukses! </strong> Silakan cek <a href="invoice.php" target="_blank">Invoice</a> anda.';
 
  		header('location: confirm-order.php');

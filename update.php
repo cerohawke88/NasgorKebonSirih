@@ -1,6 +1,8 @@
 <?php
 session_start();
 require_once('config.php');
+require_once('libraries/helpers.php');
+render('header', array('title' => 'Update Menu'));
 $db = new Config();
 $id = $_GET['id'];
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
@@ -14,36 +16,43 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
   	$db->runQuery("UPDATE menu SET nama='$nama', deskripsi='$deskripsi', harga='$harga' WHERE id='$id'");
   	
-  	echo "<font color='green'>Data added successfully.";
+  	$_SESSION['update'] = 'Berhasil update data menu.';
 	header("location:tables.php");
   	exit;
 }
 ?>
 <html>
 <body>
-	<a href="tables.php">Home</a>
-	<br/><br/>
-	
-	<form name="form2" method="post" action="update.php?id=<?php echo $id ?>">
-		<table border="0">
-			<tr> <?php foreach($menu as $row) { ?>
-				<td>nama</td>
-				<td><input type="text" name="nama" value="<?php echo $row['nama']?>"></td>
-			</tr>
-			<tr> 
-				<td>deskripsi</td>
-				<td><input type="text" name="deskripsi" value="<?php echo $row['deskripsi']?>"></td>
-			</tr>
-			<tr> 
-				<td>harga</td>
-				<td><input type="text" name="harga" value="<?php echo $row['harga']?>"></td>
-			</tr>
-			<tr>
-				<td><input type="hidden" name="id" value="<?php echo $row['id']?>"></td>
-				<?php } ?>
-				<td><input type="submit" name="POST" value="update"></td>
-			</tr>
-		</table>
-	</form>
+	<div class="row">
+		<a href="tables.php" class="col-sm-6 col-sm-offset-3" style="display: flex; padding-top: 70px;">Back to Home</a>
+			<div class="col-sm-6 col-sm-offset-3" style="display: flex; align-items: center; height: 65vh">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title"><strong>Update Menu</strong></h3>
+					</div>
+					<div class="panel-body">
+						<form action="update.php?id=<?php echo $id ?>" method="post" name="update-menu" class="col-sm-12" style="border: none">
+							<div class="form-group">
+								<?php foreach($menu as $row) { ?>
+								<div class="input-group">
+									<label>Nama</label>
+									<input type="text" name="nama" value="<?php echo $row['nama']?>">
+								</div>
+								<div class="input-group">
+									<label>Deskripsi</label>
+									<input type="text" name="deskripsi" value="<?php echo $row['deskripsi']?>">
+								</div>
+								<div class="input-group">
+									<label>Harga</label>
+									<input type="text" name="harga" value="<?php echo $row['harga']?>">
+								</div>
+								<input type="submit" name="POST" class="btn btn-default glyphicon glyphicon-shopping-cart" value="Update">
+							<?php } ?>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
 </body>
 </html>

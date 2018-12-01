@@ -47,13 +47,13 @@ $users = $db->runQuery("SELECT * FROM users");
           <li class="nav-item">
             <a class="nav-link" href="tables.php">
               <i class="material-icons">content_paste</i>
-              <p>Table Makanan</p>
+              <p>List Menu</p>
             </a>
           </li>
-          <li class="nav-item active ">
+          <li class="nav-item active">
             <a class="nav-link" href="user.php">
-              <i class="material-icons">content_paste</i>
-              <p>Table User</p>
+              <i class="material-icons">account_circle</i>
+              <p>List User</p>
             </a>
           </li>
           <li class="nav-item ">
@@ -68,9 +68,6 @@ $users = $db->runQuery("SELECT * FROM users");
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
-          <div class="navbar-wrapper">
-            <a class="navbar-brand-lg" href="user.php"><b>Table User</b></a>
-          </div>
           <div class="collapse navbar-collapse justify-content-end">
             <ul class="navbar-nav">
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
@@ -95,10 +92,39 @@ $users = $db->runQuery("SELECT * FROM users");
       <!-- Time and Date -->
       <p><img src="images/time.png" alt=""> : <span id="datetime"></span></p>
 
-        <script>
-        var dt = new Date();
-        document.getElementById("datetime").innerHTML = (("0"+dt.getDate()).slice(-2)) +"/"+ (("0"+(dt.getMonth()+1)).slice(-2)) +"/"+ (dt.getFullYear()) +" "+ (("0"+dt.getHours()).slice(-2)) +":"+ (("0"+dt.getMinutes()).slice(-2));
-        </script>
+       <script>
+            function date_time(id)
+            {
+            date = new Date;
+            year = date.getFullYear();
+            month = date.getMonth();
+            months = new Array('Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember');
+            d = date.getDate();
+            day = date.getDay();
+            days = new Array('Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu');
+            h = date.getHours();
+            if(h<10)
+            {
+            h = "0"+h;
+            }
+            m = date.getMinutes();
+            if(m<10)
+            {
+            m = "0"+m;
+            }
+            s = date.getSeconds();
+            if(s<10)
+            {
+            s = "0"+s;
+            }
+            result = ''+days[day]+' '+months[month]+' '+d+' '+year+' '+h+':'+m+':'+s;
+            document.getElementById(id).innerHTML = result;
+            setTimeout('date_time("'+id+'");','1000');
+            return true;
+            }
+            </script>
+            <span id="date_time"></span>
+            <script type="text/javascript">window.onload = date_time('date_time');</script>
         <!-- End Time and Date -->
       <div class="content">
         <div class="container-fluid">

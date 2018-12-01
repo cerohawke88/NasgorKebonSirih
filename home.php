@@ -43,8 +43,8 @@ $users = $db->runQuery("SELECT * FROM users WHERE username = ' ". $_SESSION["use
 					<div class="fh5co-logo">
 						<a href="home.php">NGKKS</a>
 					</div>
-					<div class="fh5co-menu-2 dropdown">
-						<a href="#" data-nav-section="events">Outlet</a>
+					<div class="fh5co-menu-2 dropdown" style="padding: 0px">
+						<a href="#" data-nav-section="events">Outlet</a>	
 						<a href="#" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" onclick="myFunction()">
 							<?php
 								echo $_SESSION['username'];
@@ -52,24 +52,18 @@ $users = $db->runQuery("SELECT * FROM users WHERE username = ' ". $_SESSION["use
 							<span class="caret"></span>
 						</a>
 							<ul class="dropdown-menu" aria-labelledby="dropdownMenu1" id="myDropdown">
-								<li><a href="profile.php" onclick="window.location.href='profile.php'">Akun saya</a></li>
-								<li><a href="logout.php" onclick="window.location.href='logout.php'">Logout</a></li>
+								<li><a href="profile.php" style="display: block;" onclick="window.location.href='profile.php'">Akun saya</a></li>
+								<li><a href="logout.php" style="display: block;" onclick="window.location.href='logout.php'">Logout</a></li>
 							</ul>
-						<!-- <div class="dropdown">
-							
-						</div> -->
 					</div>
-				</div>
-				<div id="navbar-cart" class="navbar-collapse collapse">
-					<ul class="nav navbar-nav">
-						<li>
+						<div id="navbar-cart" style="float: left; margin-top: -55px" class="navbar-collapse collapse" >
 							<a href="#" id="cart-popover" data-placement="bottom" title="Keranjang">
 								<span class="glyphicon glyphicon-shopping-cart"></span>
 								<span class="badge"></span>
 							</a>
-						</li>
-					</ul>
+						</div>	
 				</div>
+
 			</div>
 		</div>
 	</div>
