@@ -105,6 +105,29 @@ if (isset($_POST['login_user'])) {
           $_SESSION['level']    = $logged_in_user['level'];
           header('location:tables.php');
       } 
+
+    $password = md5($password);
+    $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+    $results = mysqli_query($db, $query);
+      if (mysqli_num_rows($results) == 1) { // user found
+        // check if user is admin or user
+        $logged_in_user = mysqli_fetch_assoc($results);
+          if($results>0){
+          if ($logged_in_user['level'] == '1') {
+              session_start();
+              $_SESSION['username'] = $logged_in_user['username'];
+              // $data['level'] level digunaan untu memanggil value level dari username yang telah login dan disimpan dalam $_SESSION['level']
+              $_SESSION['level']    = $logged_in_user['level'];
+              header('location:tables.php');
+       
+          }elseif($logged_in_user['level'] == '0'){
+              session_start();
+              $_SESSION['username'] = $logged_in_user['username'];
+              // $data['level'] level digunaan untu memanggil value level dari username yang telah login dan disimpan dalam $_SESSION['level']
+              $_SESSION['level']    = $logged_in_user['level'];
+              header('location:home.php');
+          }
+      } 
       else{
        header("location:index.php");
       }
