@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
-<?php include('partials/header.php'); ?>
 <head>
+    <title>MAP Cabang NGKKS</title>
+<?php include('partials/header.php'); ?>
     <style>
         #map{
             height: 400px;
@@ -30,6 +31,7 @@
     <div id="map"></div>
 
     <?php
+    // ambil latitude longitude dari home.php per id
         $lat = $_GET['lat'];
         $lng = $_GET['lng'];
     ?>
@@ -40,15 +42,18 @@
 
         function initMap(){
 
+            // center map
             var uluru = {lat: parseFloat(latitude), lng: parseFloat(longitude)};
 
+            // buat map
             var map = new google.maps.Map(
                 document.getElementById('map'), {zoom: 15, center: uluru});
 
+            // buat marker
             var marker = new google.maps.Marker({position: uluru, map: map});
         }
     </script>
-
+<!-- script google api -->
     <script async defer src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDjcv4dEOOtHw0srW1XQrUAXAtQJCY2EME&callback=initMap"></script>
 <?php include('partials/footer.php'); ?>
 </body>
