@@ -4,6 +4,7 @@ require_once('config.php');
 $db = new Config();
 $db->cekLogin();
 $menu = $db->runQuery("SELECT * FROM menu");
+$order = $db->runQuery("SELECT * FROM orders");
 ?>
 
 <!DOCTYPE html>
@@ -46,21 +47,21 @@ $menu = $db->runQuery("SELECT * FROM menu");
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="nav-item active ">
-            <a class="nav-link" href="./tables.php">
+            <a class="nav-link" href="tables.php">
               <i class="material-icons">content_paste</i>
               <p>Table Makanan</p>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./user.php">
+            <a class="nav-link" href="user.php">
               <i class="material-icons">content_paste</i>
               <p>Table User</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="./notifications.php">
-              <i class="material-icons">notifications</i>
-              <p>Notifications</p>
+            <a class="nav-link" href="order.php">
+              <i class="material-icons">shopping_cart</i>
+              <p>orders</p>
             </a>
         </ul>
       </div>
@@ -83,14 +84,6 @@ $menu = $db->runQuery("SELECT * FROM menu");
               </li>
           <div class="collapse navbar-collapse justify-content-end">
             <ul class="navbar-nav">
-              <li class="nav-item dropdown">
-                <a class="nav-link" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="material-icons">notifications</i>
-                  <span class="notification">5</span>
-                  <p class="d-lg-none d-md-block">
-                    Some Actions
-                  </p>
-                </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                 </div>
               </li>

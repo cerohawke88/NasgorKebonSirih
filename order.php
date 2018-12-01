@@ -1,3 +1,11 @@
+<?php
+session_start();
+require_once('config.php');
+$db = new Config();
+$db->cekLogin();
+$orders = $db->runQuery("SELECT * FROM orders");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,10 +45,16 @@
               <p>Table List</p>
             </a>
           </li>
+          <li class="nav-item ">
+            <a class="nav-link" href="user.php">
+              <i class="material-icons">content_paste</i>
+              <p>Table User</p>
+            </a>
+          </li>
           <li class="nav-item active ">
-            <a class="nav-link" href="notifications.php">
-              <i class="material-icons">notifications</i>
-              <p>Notifications</p>
+            <a class="nav-link" href="order.php">
+              <i class="material-icons">shopping_cart</i>
+              <p>Orders</p>
             </a>
           </li>
         </ul>
@@ -51,7 +65,7 @@
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand-lg" href="#pablo"><b>Notifications</b></a>
+            <a class="navbar-brand-lg" href="#pablo"><b>Orders</b></a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -61,18 +75,6 @@
           </button>
           <div class="collapse navbar-collapse justify-content-end">
             <ul class="navbar-nav">
-              <li class="nav-item dropdown">
-                <a class="nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="material-icons">notifications</i>
-                  <span class="notification">5</span>
-                  <p class="d-lg-none d-md-block">
-                    Some Actions
-                  </p>
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-          
-                </div>
-              </li>
               <li class="nav-item dropdown">
                 <a class="nav-link" href="#pablo" id="navbarDropdownProfile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="material-icons">person</i>
@@ -99,33 +101,46 @@
       <!-- End Time and Date -->
       <div class="content">
         <div class="container-fluid">
-          <div class="card">
-            <div class="card-header card-header-primary">
-              <h3 class="card-title">Notifications</h3>
-              <p>
-                <a target= href=""></a>
-              </p>
-            </div>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="alert alert-info">
-                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                      <i class="material-icons">close</i>
-                    </button>
-                    <span></span>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div class="row">
             <div class="col-md-12">
-              <div class="places-buttons">
-                <div class="row">
-                  <div class="col-lg-8 col-md-10 ml-auto mr-auto">
-                    <div class="row">
-                      <div class="col-md-4">
-                        <button class="btn btn-primary btn-block" onclick="md.showNotification('bottom','left')">Button</button>
-                      </div>
+              <div class="card card-plain">
+                <div class="card-header card-header-primary">
+                  <h4 class="card-title mt-0">List Order</h4>
+                  <p class="card-category">Melihat Order</p>
+                </div>
+                <div class="card-body">
+                  <div class="table-responsive">
+                    <table class="table">
+                      <tr>
+                      <thead class="">
+                        <th>
+                          ID
+                        </th>
+                        <th>
+                          Nama User
+                        </th>
+                        <th>
+                          Detail
+                        </th>                      
+                      </thead>
+                      <tbody>
+                        <?php foreach ($orders as $row) {
+                          ?>
+                       <tr>
+                        <td>
+                          <?php echo $row['id'];?>
+                        </td>
+                        <td>
+                          <?php echo $row['username'];?>
+                        </td>
+                        <td>
+                          <button><a href="details.php?id=<?php echo $row['id'];?>">details</a></button>
+                        </td>
+                      </tr>
+                        <?php }
+                        ?>
+                      </tbody>
+                    </tr> 
                     </div>
                   </div>
                 </div>
@@ -134,6 +149,8 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
       <!--   Core JS Files   -->
   <script src="assets/js/core/jquery.min.js"></script>
   <script src="assets/js/core/popper.min.js"></script>
