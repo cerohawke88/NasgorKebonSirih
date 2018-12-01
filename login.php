@@ -1,5 +1,8 @@
 <?php 
 include('server.php');
+require_once('libraries/helpers.php');
+
+render('header', array('title' => 'Masuk'));
 ?>
 
 <!DOCTYPE html>

@@ -1,4 +1,10 @@
-<?php include('server.php')?>
+<?php 
+
+include('server.php');
+require_once('libraries/helpers.php');
+
+render('header', array('title' => 'Buat Akun'));
+?>
 <!DOCTYPE html>
 <html>
 <head>

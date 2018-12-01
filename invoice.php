@@ -28,6 +28,7 @@ $waktuu = $db->runQuery("SELECT created_at FROM orders WHERE id = '$id_order'");
 $waktu_ambil = date("d/m/y g:i A",strtotime($waktu[0]['waktu_ambil']));
 $waktu_pesan = date("d/m/y g:i A",strtotime($waktuu[0]['created_at']));
 
+if (isset($_SESSION['menu_cart'])):
 ?>
 
 <div class="container">
@@ -117,12 +118,19 @@ $waktu_pesan = date("d/m/y g:i A",strtotime($waktuu[0]['created_at']));
                     </div>
                 </div>
             </div>
+            <button class="btn btn-default" onClick="window.print()">Print Invoice</button>
         </div>
     </div>
     <span>Saldo anda akan otomatis terpotong sesuai total harga pesanan anda.</span>
     <br>
     <span>Anda puas? Beri tahu teman anda. Anda tidak puas? Beri tahu kami :)</span>
 </div>
+
+<?php
+else:
+header('location: session-empty.php');
+endif
+?>
 
 <?php
 unset($_SESSION['menu_cart']);
