@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
   	$db->runQuery("UPDATE menu SET nama='$nama', deskripsi='$deskripsi', harga='$harga' WHERE id='$id'");
   	
-  	echo "<font color='green'>Data added successfully.";
+  	echo "<font color='green'>Data Update successfully.";
 	header("location:tables.php");
   	exit;
 }
