@@ -118,6 +118,7 @@ $users = $db->runQuery("SELECT * FROM users WHERE username = ' ". $_SESSION["use
 						<span class="fh5co-event-meta"><?php echo $row['telp'] ?></span>
 						<p><?php echo $row['alamat'] ?><br>
 						<?php echo $row['keterangan'] ?> </p>
+						<!-- ambil latitude longitude dari table alamat -->
 						<p><a href="map.php?lat=<?php echo $row['lat']?>&lng=<?php echo $row['lng']?>" class="btn btn-primary btn-outline">See Map</a></p>
 					</div>
 				</div>

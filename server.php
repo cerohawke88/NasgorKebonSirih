@@ -71,7 +71,7 @@ if (isset($_POST['login_user'])) {
     array_push($errors, "Password is required");
   }
 
-  if (count($errors) == 0) {
+  if (count($errors) == 0) { 
     $password = md5($password);
     $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
     $results = mysqli_query($db, $query);
@@ -82,21 +82,22 @@ if (isset($_POST['login_user'])) {
           if ($logged_in_user['level'] == '1') {
               session_start();
               $_SESSION['username'] = $logged_in_user['username'];
-              // $data['level'] level digunaan untu memanggil value level dari username yang telah login dan disimpan dalam $_SESSION['level']
-              $_SESSION['level']    = $logged_in_user['level'];
-              header('location:tables.php');
-       
-          }elseif($logged_in_user['level'] == '0'){
-              session_start();
-              $_SESSION['username'] = $logged_in_user['username'];
-              // $data['level'] level digunaan untu memanggil value level dari username yang telah login dan disimpan dalam $_SESSION['level']
-              $_SESSION['level']    = $logged_in_user['level'];
-              header('location:home.php');
+              header('location: tables.php');     
+              consolelog($results);
           }
-      } 
-      else{
-          header("location:index.php");
-      }
+          elseif ($logged_in_user['level'] == '0')
+          {
+            session_start();
+            $_SESSION['username'] = $logged_in_user['username'];
+            // $data['level'] level digunakan untu memanggil value level dari username yang telah login dan disimpan dalam $_SESSION['level']
+            $_SESSION['level']    = $logged_in_user['level'];
+            header('location:home.php');
+          }
+        } 
+        else {
+          array_push($errors, "Wrong username/password combination");
+        } 
+      
     }
   }
 }
@@ -147,5 +148,6 @@ if (isset($_POST['login_user'])) {
     }
 
   }
+
 
 ?>
