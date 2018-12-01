@@ -2,6 +2,7 @@
     session_start();
 	require_once('config.php');
 	$db = new Config();
+    // ambil session user
     $namapengguna = $_SESSION["username"];
     $email = $db->runQuery("SELECT email FROM users WHERE username = '".$namapengguna."'");
     $saldo = $db->runQuery("SELECT saldo FROM users WHERE username = '".$namapengguna."'");
