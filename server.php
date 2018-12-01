@@ -105,6 +105,7 @@ if (isset($_POST['login_user'])) {
           $_SESSION['level']    = $logged_in_user['level'];
           header('location:tables.php');
       } 
+
     $password = md5($password);
     $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
     $results = mysqli_query($db, $query);
