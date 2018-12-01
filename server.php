@@ -55,6 +55,7 @@ if (isset($_POST['reg_user'])) {
   			  VALUES('$username', '$email', '$password')";
   	mysqli_query($db, $query);
   	$_SESSION['username'] = $username;
+  	$_SESSION['success'] = "You are now logged in";
   	header('location: home.php');
   }
 }
@@ -104,6 +105,26 @@ if (isset($_POST['login_user'])) {
           $_SESSION['level']    = $logged_in_user['level'];
           header('location:tables.php');
       } 
+      else{
+       header("location:index.php");
+      }
+  }
+    if (mysqli_num_rows($results) == 1) { // user found
+      // check if user is admin or user
+      $logged_in_user = mysqli_fetch_assoc($results);
+    if($results>0){
+    if ($logged_in_user['level'] == '1') {
+        session_start();
+        $_SESSION['username'] = $logged_in_user['username'];
+        $_SESSION['level']    = $logged_in_user['level'];
+        header('location: tables.php');     
+    consolelog($results);
+    }elseif($logged_in_user['level'] == '0'){
+        session_start();
+        $_SESSION['username'] = $logged_in_user['username'];
+        // $data['level'] level digunaan untu memanggil value level dari username yang telah login dan disimpan dalam $_SESSION['level']
+        $_SESSION['level']    = $logged_in_user['level'];
+        header('location:home.php');
     }
     else {
         header("location:index.php");
@@ -112,6 +133,7 @@ if (isset($_POST['login_user'])) {
 }
 
   // Check If form submitted, insert form data into menu table.
+  // nambah data(add).
   if(isset($_POST['Submit'])) {
     $id = mysqli_real_escape_string($db, $_POST['id']);
     $jenis = mysqli_real_escape_string($db, $_POST['jenis']);
@@ -156,39 +178,5 @@ if (isset($_POST['login_user'])) {
     }
 
   }
-  
-  if (isset($_POST['update'])) {
-  
-  $nama = mysqli_real_escape_string($mysqli, $_POST['nama']);
-  $deskripsi= mysqli_real_escape_string($mysqli, $_POST['deskripsi']);
-  $harga = mysqli_real_escape_string($mysqli, $_POST['harga']);
-  
-      // checking empty fields
-  if(empty($nama) || empty($deskripsi) || empty($harga)) {
-        
-    if(empty($nama)) {
-      echo "<font color='red'>nama field is empty.</font><br/>";
-    }
-
-    if(empty($deskripsi)) {
-      echo "<font color='red'>deskripsi field is empty.</font><br/>";
-    }
-
-    if(empty($harga)) {
-      echo "<font color='red'>harga field is empty.</font><br/>";
-    }
-    
-    //link to the previous page
-    echo "<br/><a href='javascript:self.history.back();'>Go Back</a>";
-  } else {
-  
-  // update user data
-  $result = "UPDATE menu SET nama='$nama', deskripsi='$deskripsi', harga='$harga' WHERE id=$id";
-  mysqli_query($db, $result);
-  echo "<font color='green'>Data added successfully.";
-  // Redirect to homepage to display updated user in list
-  header('location: tables.php');
-}
-}
 
 ?>
