@@ -133,52 +133,6 @@ if (isset($_POST['login_user'])) {
 }
 
 }
-  // Check If form submitted, insert form data into menu table.
-  // nambah data(add).
-  if(isset($_POST['Submit'])) {
-    $id = mysqli_real_escape_string($db, $_POST['id']);
-    $jenis = mysqli_real_escape_string($db, $_POST['jenis']);
-    $nama = mysqli_real_escape_string($db, $_POST['nama']);
-    $deskripsi= mysqli_real_escape_string($db, $_POST['deskripsi']);
-    $harga = mysqli_real_escape_string($db, $_POST['harga']);
-    
-    // checking empty fields
-  if(empty($id) || empty($jenis) || empty($nama) || empty($deskripsi) || empty($harga)) {
-        
-    if(empty($id)) {
-      echo "<font color='red'>Id field is empty.</font><br/>";
-    }
-    
-    if(empty($jenis)) {
-      echo "<font color='red'>Jenis field is empty.</font><br/>";
-    }
-    
-    if(empty($nama)) {
-      echo "<font color='red'>nama field is empty.</font><br/>";
-    }
-
-    if(empty($deskripsi)) {
-      echo "<font color='red'>deskripsi field is empty.</font><br/>";
-    }
-
-    if(empty($harga)) {
-      echo "<font color='red'>harga field is empty.</font><br/>";
-    }
-    
-    //link to the previous page
-    echo "<br/><a href='javascript:self.history.back();'>Go Back</a>";
-  } else {
-        
-    // Insert user data into table
-    $result = "INSERT INTO menu (id,jenis,nama,deskripsi,harga) VALUES('$id','$jenis','$nama','$deskripsi','$harga')";
-    
-    // Show message when user added
-    mysqli_query($db, $result);
-    echo "<font color='green'>Data added successfully.";
-    header('location: tables.php');
-    }
-
-  }
 
 
 ?>
