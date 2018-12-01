@@ -8,7 +8,7 @@
 	function load_menu()
 	{
 		$.ajax({
-			url:"menu_all.php",
+			url:"templates/menu_all.php",
 			method:"POST",
 			success:function(data)
 			{

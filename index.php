@@ -6,7 +6,9 @@ $minuman = $db->runQuery("SELECT * FROM menu WHERE jenis = 'Minuman'");
 $snack = $db->runQuery("SELECT * FROM menu WHERE jenis = 'Snack'");
 $alamat = $db->runQuery("SELECT * FROM alamat");
 ?>
-<?php include('partials/header.php'); ?>
+<?php require_once('libraries/helpers.php') ?>
+
+<?php render('header', array('title' => 'Home')); ?>
 <title>Nasi Goreng Kebon Sirih</title>
 <body>
 	<div id="fh5co-container">

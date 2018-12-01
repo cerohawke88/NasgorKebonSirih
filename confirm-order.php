@@ -2,8 +2,14 @@
 session_start();
 $total_harga = 0;
 $total_item = 0;
-include('partials/header.php');
+
+require_once('libraries/helpers.php');
+
+render('header', array('title' => 'Konfirmasi Pesanan'));
+
+if (isset($_SESSION['menu_cart'])):
 ?>
+
 <div class="row">
     <a href="home.php" class="col-sm-6 col-sm-offset-3" style="display: flex; padding-top: 40px">Back to Home</a>
     <div class="col-sm-6 col-sm-offset-3" style="display: flex; align-items: center; height: 60vh">
@@ -75,6 +81,12 @@ include('partials/header.php');
         </div>
     </div>
 </div>
+<?php
+else:
+header('location: session-empty.php');
+endif
+?>
+
 <?php
 unset($_SESSION['success']);
 unset($_SESSION['failed']);
