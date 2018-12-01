@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
-<?php include('partials/header.php'); ?>
 <head>
+    <title>MAP Cabang NGKKS</title>
+<?php include('partials/header.php'); ?>
     <style>
         #map{
             height: 400px;
