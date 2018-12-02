@@ -4,6 +4,10 @@ require_once('config.php');
 $db = new Config();
 $db->cekLoginAdmin();
 $orders = $db->runQuery("SELECT * FROM orders");
+
+if ($_SESSION['username'] != 'admin') {
+  header('location:login.php');
+}
 ?>
 
 <!DOCTYPE html>

@@ -6,6 +6,10 @@ $db = new Config();
 $db->cekLoginAdmin();
 $menu = $db->runQuery("SELECT * FROM menu");
 $order = $db->runQuery("SELECT * FROM orders");
+
+if ($_SESSION['username'] != 'admin') {
+  header('location:login.php');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
