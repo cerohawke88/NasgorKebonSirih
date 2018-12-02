@@ -7,6 +7,8 @@ $db->cekLoginAdmin();
 $menu = $db->runQuery("SELECT * FROM menu");
 $order = $db->runQuery("SELECT * FROM orders");
 if ($_SESSION['username'] != 'admin') {
+  $_SESSION['username'] = '';
+  session_destroy();
   header('location:login.php');
 }
 ?>

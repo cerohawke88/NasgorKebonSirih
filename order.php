@@ -5,6 +5,8 @@ $db = new Config();
 $db->cekLoginAdmin();
 $orders = $db->runQuery("SELECT * FROM orders");
 if ($_SESSION['username'] != 'admin') {
+  $_SESSION['username'] = '';
+  session_destroy();
   header('location:login.php');
 }
 ?>
