@@ -3,7 +3,7 @@ session_start();
 require_once('config.php');
 $db = new Config();
 $db->cekLoginAdmin();
-$orders = $db->runQuery("SELECT * FROM orders");
+$orders = $db->runQuery("SELECT * FROM orders WHERE 1");
 if ($_SESSION['username'] != 'admin') {
   $_SESSION['username'] = '';
   session_destroy();
@@ -165,8 +165,9 @@ if ($_SESSION['username'] != 'admin') {
                       </thead>
                       <tbody>
                         <?php 
-                        foreach ($orders as $row) {
-                          $total_harga = number_format($row['total_harga'], 0,',','.');
+                        if (mysqli_num_rows($orders) > 0) {
+                          foreach ($orders as $row) {
+                            $total_harga = number_format($row['total_harga'], 0,',','.');
                           ?>
                        <tr>
                         <td>
@@ -188,7 +189,11 @@ if ($_SESSION['username'] != 'admin') {
                           <button><a href="details.php?id=<?php echo $row['id'];?>">Details</a></button>
                         </td>
                       </tr>
-                        <?php }
+                        <?php 
+                              }
+                          } else {
+                             echo '<div class="alert alert-danger" role="alert">Belum ada order untuk saat ini :(</div>';
+                          }
                         ?>
                       </tbody>
                     </tr> 
