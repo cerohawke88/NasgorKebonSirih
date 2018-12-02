@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 29, 2018 at 10:40 AM
+-- Generation Time: Dec 02, 2018 at 03:13 AM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.8
 
@@ -48,7 +48,7 @@ INSERT INTO `alamat` (`id`, `cabang`, `telp`, `alamat`, `keterangan`, `lat`, `ln
 (3, 'Pasaraya Grande', '085945040267', 'Jl. Dapur raya PG Lt LG #W1', 'Buka tiap hari dari jam 10.00-21.00', '-6.243947', '106.802905'),
 (4, 'Bintaro Exchange Mall', '085727555723', 'Food Exchange,Lt 1 BEMall', 'Buka tiap hari dari jam 10.00-22.00', '-6.285386', '106.728054'),
 (5, 'Taman Kuliner', '085776567351', 'Jl. Otista Raya,Ciputat', 'Buka tiap hari dari jam 04.00-23.00', '-6.322897', '106.745194'),
-(6, 'Tanggerang Selatan', '(021) 7415881', 'Jl. Pajajaran no.45, Pamulang', 'buka tiap hari dari jam 11.00-23.00', '-6.340167', '106.738612');
+(6, 'Tangerang Selatan', '(021) 7415881', 'Jl. Pajajaran no.45, Pamulang', 'buka tiap hari dari jam 11.00-23.00', '-6.340167', '106.738612');
 
 -- --------------------------------------------------------
 
@@ -103,7 +103,8 @@ INSERT INTO `menu` (`id`, `jenis`, `nama`, `gambar`, `deskripsi`, `harga`) VALUE
 (31, 'Makanan', 'Sop Kambing', 'images/menu3.jpg', 'Mau makan yang seger-seger? Wajib cobain sop kambing punye kite!', 40000),
 (32, 'Makanan', 'Kambing Guling', 'images/menu8.jpg', 'Yang mau nyobain rasa kambing utuh silahkan dicoba yang satu ini.', 40000),
 (33, 'Makanan', 'Telor Dadar/Ceplok', 'images/menu16.jpg', 'Yang satu ini tambahan buat makan kite.', 6000),
-(34, 'Makanan', 'Nasi Putih', 'images/menu13.jpg', 'Nasi putih hangat siap santap.', 7000);
+(34, 'Makanan', 'Nasi Putih', 'images/menu13.jpg', 'Nasi putih hangat siap santap.', 7000),
+(35, 'Makanan', 'Rendanggg', '', 'Mantap', 5000);
 
 -- --------------------------------------------------------
 
@@ -115,8 +116,9 @@ CREATE TABLE `orders` (
   `id` int(11) NOT NULL,
   `username` varchar(191) NOT NULL,
   `total_harga` int(11) NOT NULL,
-  `catatan` varchar(255) NOT NULL,
-  `waktu_ambil` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+  `catatan` varchar(255) DEFAULT NULL,
+  `waktu_ambil` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -155,10 +157,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `saldo`, `level`, `created_at`) VALUES
-(1, 'Test', 'test@test.com', 'a8f5f167f44f4964e6c998dee827110c', 30000, 0, '2018-10-29 08:48:32'),
+(1, 'Test', 'test@test.com', 'a8f5f167f44f4964e6c998dee827110c', 300000, 0, '2018-10-29 08:48:32'),
 (2, 'Guest', 'guest@guest.com', 'efe6398127928f1b2e9ef3207fb82663', 30000, 0, '2018-11-06 16:56:30'),
-(3, 'Vicky', 'vickysultan08@gmail.com', 'a8f5f167f44f4964e6c998dee827110c', 20000, 0, '2018-11-19 16:33:13'),
-(4, 'dzaky', 'dzaky@gmail.com', 'a8f5f167f44f4964e6c998dee827110c', 0, 0, '2018-11-23 13:54:19'),
+(3, 'Vicky', 'vickysultan08@gmail.com', 'a8f5f167f44f4964e6c998dee827110c', 99840000, 0, '2018-11-19 16:33:13'),
+(4, 'dzaky', 'dzaky@gmail.com', 'a8f5f167f44f4964e6c998dee827110c', 300000, 0, '2018-11-23 13:54:19'),
 (5, 'Haha', 'haha@gaga.com', '4e4d6c332b6fe62a63afe56171fd3725', 30000, 0, '2018-11-25 14:34:54'),
 (6, 'admin', 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 30000, 1, '2018-11-25 14:59:22');
 
@@ -201,7 +203,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `menu`
 --
 ALTER TABLE `menu`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 --
 -- AUTO_INCREMENT for table `orders`
 --
