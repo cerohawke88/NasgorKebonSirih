@@ -2,7 +2,7 @@
 session_start();
 require_once('config.php');
 $db = new Config();
-$db->cekLogin();
+$db->cekLoginAdmin();
 $orders = $db->runQuery("SELECT * FROM orders");
 ?>
 

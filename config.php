@@ -47,8 +47,11 @@ class Config {
 			//redirect ke halaman login
 			header('location:login.php');
 		} 
-		elseif ($_SESSION['username'] != "admin") {
-			header('location:login.php');
+	}
+
+	function cekLoginAdmin() {
+		if ($_SESSION['username'] != "admin") {
+			return $this->cekLogin();
 		}
 	}
 }

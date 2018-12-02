@@ -3,7 +3,7 @@ session_start();
 require_once('config.php');
 // include 'server.php';
 $db = new Config();
-$db->cekLogin();
+$db->cekLoginAdmin();
 $menu = $db->runQuery("SELECT * FROM menu");
 $order = $db->runQuery("SELECT * FROM orders");
 ?>
