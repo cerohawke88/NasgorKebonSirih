@@ -1,4 +1,7 @@
 <?php
+// tampilan cart pada popover di pojok kiri atas
+// dinamis sesuai ada atau tidaknya isi dari sesi menu_cart
+// semua pesanan akan disimpan dalam sesi menu_cart dalam bentuk array
 
 session_start();
 
@@ -18,8 +21,10 @@ $output = '
 ';
 if(!empty($_SESSION["menu_cart"]))
 {
+    // foreach semua isi dari sesi menu_cart
     foreach($_SESSION["menu_cart"] as $keys => $values)
     {
+        // menyimpan tampilan html dalam variabel output
         $output .= '
         <tr>
             <td>'.$values["nama"].'</td>
@@ -51,12 +56,14 @@ else
     ';
 }
 $output .= '</table></div>';
+// deklarasi variabel dengan array yang berisi tampilan tabel, kalkulasi total harga dan total item
 $data = array(
     'cart_details'      =>  $output,
     'total_harga'       =>  'Rp' . number_format($total_harga,2,',','.'),
     'total_item'        =>  $total_item
 );  
 
+// menyimpan data array dalam bentuk JSON
 echo json_encode($data);
 
 

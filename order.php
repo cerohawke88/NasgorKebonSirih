@@ -13,20 +13,24 @@ $orders = $db->runQuery("SELECT * FROM orders");
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
-    Notifikasi
+    Orders
   </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <link rel="shortcut icon" href="images/food-menu.png">
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
   <!-- CSS Files -->
   <link href="css/material-dashboard.css?v=2.1.1" rel="stylesheet" />
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
 </head>
 
 <body class="">
   <div class="wrapper ">
-    <div class="sidebar" data-color="orange" data-background-color="white" data-image="../assets/img/foto.jpg">
+    <div class="sidebar" data-color="orange" data-background-color="white" data-image="assets/img/foto.jpg">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -88,9 +92,8 @@ $orders = $db->runQuery("SELECT * FROM orders");
       </nav>
       <!-- End Navbar -->
       <!-- Time and Date -->
-      <p><img src="images/time.png" alt=""> : <span id="datetime"></span></p>
-
-        <script>
+      <p><img src="images/time.png" alt=""> : <span id="date_time"></span></p>
+       <script>
             function date_time(id)
             {
             date = new Date;
@@ -115,13 +118,12 @@ $orders = $db->runQuery("SELECT * FROM orders");
             {
             s = "0"+s;
             }
-            result = ''+days[day]+' '+months[month]+' '+d+' '+year+' '+h+':'+m+':'+s;
+            result = ''+days[day]+', '+d+' '+months[month]+' '+year+' <strong>'+h+':'+m+':'+s+' </strong>';
             document.getElementById(id).innerHTML = result;
             setTimeout('date_time("'+id+'");','1000');
             return true;
             }
             </script>
-            <span id="date_time"></span>
             <script type="text/javascript">window.onload = date_time('date_time');</script>
       <!-- End Time and Date -->
       <div class="content">

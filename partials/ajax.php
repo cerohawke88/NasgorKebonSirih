@@ -1,10 +1,13 @@
 <script>
+
+// fungsi ajax untuk memproses pesanan tanpa perlu menunggu loading
 	$(document).ready(function(){
 
 	load_menu();
 
 	load_cart_data();
     
+    // memuat data semua menu
 	function load_menu()
 	{
 		$.ajax({
@@ -17,6 +20,7 @@
 		});
 	}
 
+	// memuat data keranjang dalam bentuk JSON
 	function load_cart_data()
 	{
 		$.ajax({
@@ -31,6 +35,7 @@
 		});
 	}
 
+	// memproses kerangka dan konten dari popover keranjang
 	$('#cart-popover').popover({
 		html : true,
         container: 'body',
@@ -39,6 +44,7 @@
         }
 	});
 
+	// memproses event setelah menekan tombol Konfirmasi Pesanan
 	$(document).on('click', '.add_to_cart', function(){
 		var id = $(this).attr("id");
 		var nama = $('#nama'+id+'').val();
@@ -47,6 +53,7 @@
 		var aksi = "add";
 		if(jumlah > 0)
 		{
+			// memasukkan data pesanan ke php tersebut
 			$.ajax({
 				url:"proses-order.php",
 				method:"POST",
@@ -64,6 +71,7 @@
 		}
 	});
 
+	// memproses event setelah menekan tombol Hapus
 	$(document).on('click', '.delete', function(){
 		var id = $(this).attr("id");
 		var aksi = 'remove';
@@ -87,6 +95,7 @@
 		}
 	});
 
+	// memproses event setelah menekan tombol Hapus Keranjang
 	$(document).on('click', '#clear_cart', function(){
 		var aksi = 'empty';
 		$.ajax({

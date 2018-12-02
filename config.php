@@ -46,6 +46,9 @@ class Config {
 		if (!isset($_SESSION['username'])) {
 			//redirect ke halaman login
 			header('location:login.php');
+		} 
+		elseif ($_SESSION['username'] != "admin") {
+			header('location:login.php');
 		}
 	}
 }

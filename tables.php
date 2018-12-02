@@ -11,8 +11,6 @@ $order = $db->runQuery("SELECT * FROM orders");
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
     <link rel="shortcut icon" href="images/food-menu.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
@@ -31,7 +29,7 @@ $order = $db->runQuery("SELECT * FROM orders");
   </head>
   <body class="">
     <div class="wrapper ">
-      <div class="sidebar" data-color="orange" data-background-color="white" data-image="../assets/img/foto.jpg">
+      <div class="sidebar" data-color="orange" data-background-color="white" data-image="assets/img/foto.jpg">
         <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
         Tip 2: you can also add an image using data-image tag
@@ -98,8 +96,8 @@ $order = $db->runQuery("SELECT * FROM orders");
             </nav>
             <!-- End Navbar -->
             <!-- Time and Date -->
-            <p><img src="images/time.png" alt=""> : <span id="datetime"></span></p>
-            <script>
+         <p><img src="images/time.png" alt=""> : <span id="date_time"></span></p>
+       <script>
             function date_time(id)
             {
             date = new Date;
@@ -124,13 +122,12 @@ $order = $db->runQuery("SELECT * FROM orders");
             {
             s = "0"+s;
             }
-            result = ''+days[day]+' '+months[month]+' '+d+' '+year+' '+h+':'+m+':'+s;
+            result = ''+days[day]+', '+d+' '+months[month]+' '+year+' <strong>'+h+':'+m+':'+s+' </strong>';
             document.getElementById(id).innerHTML = result;
             setTimeout('date_time("'+id+'");','1000');
             return true;
             }
             </script>
-            <span id="date_time"></span>
             <script type="text/javascript">window.onload = date_time('date_time');</script>
             <!-- End Time and Date -->
             <div class="content">
@@ -165,10 +162,10 @@ $order = $db->runQuery("SELECT * FROM orders");
                                   Harga
                                 </th>
                                 <th>
-                                  update
+                                  Update
                                 </th>
                                 <th>
-                                  delete
+                                  Delete
                                 </th>
                               </thead>
                               <tbody>

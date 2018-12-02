@@ -11,8 +11,8 @@ $users = $db->runQuery("SELECT * FROM users");
 
 <head>
   <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <title>
    ADMIN
@@ -31,7 +31,7 @@ $users = $db->runQuery("SELECT * FROM users");
 
 <body class="">
   <div class="wrapper ">
-    <div class="sidebar" data-color="orange" data-background-color="white" data-image="../assets/img/foto.jpg">
+    <div class="sidebar" data-color="orange" data-background-color="white" data-image="assets/img/foto.jpg">
       <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
 
@@ -81,7 +81,7 @@ $users = $db->runQuery("SELECT * FROM users");
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                  <a class="dropdown-item" href="logout.php">Log out</a>
+                  <a class="dropdown-item" hreconfilogout.php">Log out</a>
                 </div>
               </li>
             </ul>
@@ -90,8 +90,7 @@ $users = $db->runQuery("SELECT * FROM users");
       </nav>
       <!-- End Navbar -->
       <!-- Time and Date -->
-      <p><img src="images/time.png" alt=""> : <span id="datetime"></span></p>
-
+      <p><img src="images/time.png" alt=""> : <span id="date_time"></span></p>
        <script>
             function date_time(id)
             {
@@ -117,13 +116,12 @@ $users = $db->runQuery("SELECT * FROM users");
             {
             s = "0"+s;
             }
-            result = ''+days[day]+' '+months[month]+' '+d+' '+year+' '+h+':'+m+':'+s;
+            result = ''+days[day]+', '+d+' '+months[month]+' '+year+' <strong>'+h+':'+m+':'+s+' </strong>';
             document.getElementById(id).innerHTML = result;
             setTimeout('date_time("'+id+'");','1000');
             return true;
             }
             </script>
-            <span id="date_time"></span>
             <script type="text/javascript">window.onload = date_time('date_time');</script>
         <!-- End Time and Date -->
       <div class="content">
@@ -131,6 +129,9 @@ $users = $db->runQuery("SELECT * FROM users");
           <div class="row">
             <div class="col-md-12">
               <div class="card card-plain">
+                <?php if(isset($_SESSION['updatesaldo'])) { ?>
+                <div class="alert alert-success" role="alert"><?php echo $_SESSION['updatesaldo']; ?></div>
+                <?php } ?>
                 <div class="card-header card-header-primary">
                   <h4 class="card-title mt-0">List User</h4>
                   <p class="card-category">Menambahkan Saldo</p>
@@ -153,7 +154,7 @@ $users = $db->runQuery("SELECT * FROM users");
                           Saldo
                         </th>
                         <th>
-                          update
+                          Aksi
                         </th>                      
                       </thead>
                       <tbody>
@@ -232,6 +233,7 @@ $users = $db->runQuery("SELECT * FROM users");
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="assets/js/material-dashboard.js?v=2.1.1" type="text/javascript"></script>
   <?php include('partials/con_dash.php'); ?>
+  <?php unset($_SESSION['updatesaldo']);?>
 </body>
 
 </html>

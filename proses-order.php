@@ -1,4 +1,5 @@
 <?php
+// proses memasukkan isi pesanan pada keranjang ke dalam sesi menu_cart
 
 session_start();
 

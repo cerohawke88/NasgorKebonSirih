@@ -64,12 +64,12 @@ $menu = $db->runQuery("SELECT * FROM menu");
 							<div class="form-group">
 								<div class="input-group">
 									<label>Jenis</label>
-									<input type="text" name="jenis">
-									<!-- <select name="jenis">
+									<!-- <input type="text" name="jenis"> -->
+									<select name="jenis">
 			                            <option value="Makanan">Makanan</option>
 			                            <option value="Minuman">Minuman</option>
 			                            <option value="Snack">Snack</option>
-			                        </select> -->
+			                        </select>
 								</div>
 								<div class="input-group">
 									<label>Nama Menu</label>

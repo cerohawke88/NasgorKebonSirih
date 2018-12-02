@@ -8,6 +8,7 @@ include 'config.php';
 $db = new Config();
 
 $total_harga = 0;
+// mengambil isi dari session menu_cart lalu foreach seluruh variabel yang diperlukan
 foreach($_SESSION["menu_cart"] as $keys => $values) {
     $menu = $values['nama'];
     $id_menu = $values['id'];
@@ -16,12 +17,11 @@ foreach($_SESSION["menu_cart"] as $keys => $values) {
     $total_harga = $total_harga + $harga;
 }
 
+// melakukan query terhadap variabel yang dibutuhkan pada invoice
 $username = $_SESSION['username'];
 $email = $db->runQuery("SELECT email FROM users WHERE username = '$username'");
-
 $orderBaru = $db->runQuery("SELECT id FROM orders WHERE username = '$username' ORDER BY waktu_ambil 
     DESC LIMIT 1");
-
 $id_order = reset($orderBaru)['id'];
 $notes = $db->runQuery("SELECT catatan FROM orders WHERE id = '$id_order'");
 $waktu = $db->runQuery("SELECT waktu_ambil FROM orders WHERE id = '$id_order'");
@@ -129,11 +129,13 @@ if (isset($_SESSION['menu_cart'])):
 
 <?php
 else:
+// redirect ke halaman session-empty ketika sesi kosong atau sudah habis
 header('location: session-empty.php');
 endif
 ?>
 
 <?php
+// menghapus sesi setelah masuk invoice
 unset($_SESSION['menu_cart']);
 
 ?>
