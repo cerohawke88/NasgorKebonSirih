@@ -50,10 +50,8 @@ $menu = $db->runQuery("SELECT * FROM menu");
 ?>
 <html>
 	<body>
-		<a href="tables.php">Home</a>
-		<br/><br/>
-		
 		<div class="row">
+			<a href="tables.php" class="col-sm-6 col-sm-offset-3" style="display: flex; padding-top: 70px;">Back to Home</a>
 			<div class="col-sm-6 col-sm-offset-3" style="display: flex; align-items: center; height: 65vh">
 				<div class="panel panel-default">
 					<div class="panel-heading">

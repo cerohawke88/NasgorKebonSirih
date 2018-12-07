@@ -165,7 +165,6 @@ if ($_SESSION['username'] != 'admin') {
                       </thead>
                       <tbody>
                         <?php 
-                        if (!is_null(mysqli_num_rows($orders))) {
                           foreach ($orders as $row) {
                             $total_harga = number_format($row['total_harga'], 0,',','.');
                           ?>
@@ -186,15 +185,11 @@ if ($_SESSION['username'] != 'admin') {
                           <?php echo $row['waktu_ambil'];?>
                         </td>
                         <td>
-                          <button><a href="details.php?id=<?php echo $row['id'];?>">Details</a></button>
+                          <a href="details.php?id=<?php echo $row['id'];?>">Details</a>
                         </td>
                       </tr>
                         <?php 
                               }
-                            }
-                            else {
-                              echo '<div class="alert alert-danger" role="alert">Belum ada order untuk saat ini :(</div>';
-                            }
                         ?>
                       </tbody>
                     </tr> 
